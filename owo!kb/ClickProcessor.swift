@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-import SwiftSocket
+import Socket
+import AudioToolbox
 
 public class ClickProcessor {
     
@@ -16,16 +17,63 @@ public class ClickProcessor {
     //keyboard:key,N_down
     
     let delegate = UIApplication.shared.delegate as! AppDelegate
-    
-    public func keyDownToServer(_ keyName: String){
-        print("Key ", keyName, " down to ", UserDefaults.standard.string(forKey: "ServerIp")!, ":", UserDefaults.standard.integer(forKey: "ServerPort"))
-        _ = delegate.client.send(data: ("keyboard:key," + keyName + "_down").data(using: .utf8)!)
+
+    public func keyDownToServer(_ keyName: String) {
+        do {
+            if UserDefaults.standard.integer(forKey: "NetProtocol") == 0 {
+                print("UDP Key", keyName, "down to", UserDefaults.standard.string(forKey: "ServerIp")! + ":" + String(UserDefaults.standard.integer(forKey: "ServerPort")))
+                try delegate.socketUDP.write(from: ("keyboard:key," + keyName + "_down").data(using: .utf8)!, to: Socket.createAddress(for: UserDefaults.standard.string(forKey: "ServerIp") ?? "192.168.0.1", on: Int32(UserDefaults.standard.integer(forKey: "ServerPort")))!)
+            } else if UserDefaults.standard.integer(forKey: "NetProtocol") == 1 {
+                print("TCP Key", keyName, "down to", UserDefaults.standard.string(forKey: "ServerIp")! + ":" + String(UserDefaults.standard.integer(forKey: "ServerPort")))
+                delegate.socketTCP = try Socket.create(connectedUsing: Socket.Signature(protocolFamily: .inet, socketType: .stream, proto: .tcp, hostname: UserDefaults.standard.string(forKey: "ServerIp"), port: Int32(UserDefaults.standard.string(forKey: "ServerPort")!))!)
+                try delegate.socketTCP.write(from: ("keyboard:key," + keyName + "_down").data(using: .utf8)!)
+            }
+        } catch let error {
+            guard let socketError = error as? Socket.Error else {
+                print("Unexpected error...")
+                return
+            }
+            print("Error reported: \(socketError.description)")
+        }
+        if UserDefaults.standard.bool(forKey: "Taptic") == true {
+            
+            //6s
+            AudioServicesPlaySystemSound(1520)
+            
+            //7 and newer
+            UIImpactFeedbackGenerator(style: .medium).prepare()
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+        }
     }
-    
+
     public func keyUpToServer(_ keyName: String){
-        print("Key ", keyName, " up")
-        _ = delegate.client.send(data: ("keyboard:key," + keyName + "_up").data(using: .utf8)!)
+        do {
+            if UserDefaults.standard.integer(forKey: "NetProtocol") == 0 {
+                print("UDP Key", keyName, "up")
+                try delegate.socketUDP.write(from: ("keyboard:key," + keyName + "_up").data(using: .utf8)!, to: Socket.createAddress(for: UserDefaults.standard.string(forKey: "ServerIp") ?? "192.168.0.1", on: Int32(UserDefaults.standard.integer(forKey: "ServerPort")))!)
+            }else if UserDefaults.standard.integer(forKey: "NetProtocol") == 1 {
+                print("TCP Key", keyName, "up")
+                delegate.socketTCP = try Socket.create(connectedUsing: Socket.Signature(protocolFamily: .inet, socketType: .stream, proto: .tcp, hostname: UserDefaults.standard.string(forKey: "ServerIp"), port: Int32(UserDefaults.standard.string(forKey: "ServerPort")!))!)
+                try delegate.socketTCP.write(from: ("keyboard:key," + keyName + "_up").data(using: .utf8)!)
+            }
+        } catch let error {
+            guard let socketError = error as? Socket.Error else {
+                print("Unexpected error...")
+                return
+            }
+            print("Error reported: \(socketError.description)")
+        }
+        if UserDefaults.standard.bool(forKey: "Taptic") == true {
+            
+            //6s
+            AudioServicesPlaySystemSound(1520)
+            
+            //7 and newer
+            UIImpactFeedbackGenerator(style: .medium).prepare()
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+        }
     }
+    
 }
 
 	

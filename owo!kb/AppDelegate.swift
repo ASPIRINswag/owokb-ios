@@ -7,50 +7,61 @@
 //
 
 import UIKit
-import SwiftSocket
+import Socket
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var client: UDPClient = UDPClient(address: UserDefaults.standard.string(forKey: "ServerIp") ?? "192.168.0.1", port: Int32(UserDefaults.standard.integer(forKey: "ServerPort")))
-//    var server = TCPServer(address: UIDevice.current.ipAddress()!, port: 8080)
+    
+    var socketUDP = try! Socket.create(family: .inet, type: .datagram, proto: .udp)
+    var socketTCP = try! Socket.create(family: .inet, type: .stream, proto: .tcp)
+    func StartSerter() {
+        do {
+            socketUDP = try Socket.create(family: .inet, type: .datagram, proto: .udp)
+            
+        } catch let error {
+            guard let socketError = error as? Socket.Error else {
+                print("Unexpected error...")
+                return
+            }
+            print("Error reported: \(socketError.description)")
+        }
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let defaults = UserDefaults.standard
+        //system things
+        UserDefaults.standard.register(defaults: ["FirstStart" : true])
+        UserDefaults.standard.register(defaults: ["ServerIp" : "192.168.0.1"])
+        UserDefaults.standard.register(defaults: ["ServerPort" : "727"])
+        UserDefaults.standard.register(defaults: ["NetProtocol" : "0"]) //0 - UDP; 1 - TCP
+        UserDefaults.standard.register(defaults: ["ButtonsCount" : "2"]) //0 - UDP; 1 - TCP
         
-        let FirstStart = ["FirstStart" : true]
-        defaults.register(defaults: FirstStart)
+        //some useless things
+        UserDefaults.standard.register(defaults: ["Taptic" : false])
         
-        let ServerIp = ["ServerIp" : "192.168.0.1"]
-        defaults.register(defaults: ServerIp)
+        //keys
+        UserDefaults.standard.register(defaults: ["ButtonKey1" : "Z"])
+        UserDefaults.standard.register(defaults: ["ButtonKey2" : "X"])
+        UserDefaults.standard.register(defaults: ["ButtonKey3" : "D"])
+        UserDefaults.standard.register(defaults: ["ButtonKey4" : "F"])
+        UserDefaults.standard.register(defaults: ["ButtonKey5" : "G"])
+        UserDefaults.standard.register(defaults: ["ButtonKey6" : "H"])
+        UserDefaults.standard.register(defaults: ["ButtonKey7" : "J"])
+        UserDefaults.standard.register(defaults: ["ButtonKey8" : "K"])
+        UserDefaults.standard.register(defaults: ["ButtonKey9" : "L"])
         
-        let ServerPort = ["ServerPort" : "727"]
-        defaults.register(defaults: ServerPort)
-        
-        let ConnectionType = ["ConnectionType" : "0"] //0 - UDP; 1 - TCP
-        defaults.register(defaults: ConnectionType)
-        
-        let FourKeySwitch = ["FourKeySwitch" : false]
-        defaults.register(defaults: FourKeySwitch)
-        
-        let UnitedKeySwitch = ["UnitedKeySwitch" : false]
-        defaults.register(defaults: UnitedKeySwitch)
-        
-        let UIView2K_1K = ["UIView2K_1K" : "Z"]
-        defaults.register(defaults: UIView2K_1K)
-        
-        let UIView2K_2K = ["UIView2K_2K" : "X"]
-        defaults.register(defaults: UIView2K_2K)
+        StartSerter()
         
         return true
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
-        client.close()
-//        server.close()
+        socketUDP.close()
+        socketTCP.close()
         print("App will become inactive. Connection closed")
     }
     
@@ -63,29 +74,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        client = UDPClient(address: UserDefaults.standard.string(forKey: "ServerIp")!, port: Int32(UserDefaults.standard.integer(forKey: "ServerPort")))
-//        server = TCPServer(address: UIDevice.current.ipAddress()!, port: 8080)
-        print("App did become active. New connection is ", UserDefaults.standard.string(forKey: "ServerIp")!, ":", UserDefaults.standard.integer(forKey: "ServerPort"))
-//        print("New server address is ", UIDevice.current.ipAddress()!, ":8080")
-        
-//        switch server.listen() {
-//        case .success:
-//            while true {
-//                if let Package = server.accept() {
-//                    print("Newclient from:\(Package.address)[\(Package.port)]")
-//                    print("Catch:", String(decoding: Package.read(1024*10)!, as: UTF8.self))
-//                } else {
-//                    print("accept error")
-//                }
-//            }
-//        case .failure:
-//            print("error")
-//        }
+        StartSerter()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        client.close()
-//        server.close()
+        socketUDP.close()
+        socketTCP.close()
         print("rip app")
         
     }
