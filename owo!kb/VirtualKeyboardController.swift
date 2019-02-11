@@ -36,7 +36,7 @@ class VirtualKeyboardController: UIViewController,UITextFieldDelegate {
         return false
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if UserDefaults.standard.integer(forKey: "ButtonsCount") == 10 {
             NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: UIResponder.keyboardDidHideNotification, object: nil)
