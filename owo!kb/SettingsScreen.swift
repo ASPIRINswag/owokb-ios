@@ -80,15 +80,15 @@ class SettingsScreen: UITableViewController, UITextFieldDelegate {
                     tableView.cellForRow(at: [0,i])?.accessoryType = .none
                 }
                 cell.accessoryType = .checkmark
-                UserDefaults.standard.set((indexPath.row + 1), forKey: "ButtonsCount")
-                print("ButtonsCount changed to:", (indexPath.row + 1))
+                UserDefaults.standard.set(cell.restorationIdentifier!, forKey: "Layout")
+                print("layout changed to:", cell.restorationIdentifier!)
             }
         }
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if self.restorationIdentifier == "layoutSettingsScreen" {
-            if indexPath.row == (UserDefaults.standard.integer(forKey: "ButtonsCount") - 1){
+            if cell.restorationIdentifier! as String == UserDefaults.standard.string(forKey: "Layout"){
                 cell.accessoryType = .checkmark
             }
         }

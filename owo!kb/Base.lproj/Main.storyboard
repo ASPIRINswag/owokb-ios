@@ -84,7 +84,7 @@
                         <sections>
                             <tableViewSection headerTitle="Connection" footerTitle="Also make sure that your 727 port is free" id="Uih-Ih-8b6">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="xBV-yj-oGq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="44" id="xBV-yj-oGq">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.94999999999999996" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xBV-yj-oGq" id="uWo-fV-QNy">
@@ -691,7 +691,7 @@
                         <sections>
                             <tableViewSection id="R6V-dg-RbS">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="dOZ-I3-fjO" rowHeight="44" style="IBUITableViewCellStyleDefault" id="Ns2-zH-p6j">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="defaultKeys_1" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="dOZ-I3-fjO" rowHeight="44" style="IBUITableViewCellStyleDefault" id="Ns2-zH-p6j">
                                         <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ns2-zH-p6j" id="pF3-L4-vwa">
@@ -709,7 +709,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.19997459649999999" green="0.2000150084" blue="0.1999689043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="zso-Ww-a3t" rowHeight="44" style="IBUITableViewCellStyleDefault" id="k2S-Yr-8Y1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="defaultKeys_2" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="zso-Ww-a3t" rowHeight="44" style="IBUITableViewCellStyleDefault" id="k2S-Yr-8Y1">
                                         <rect key="frame" x="0.0" y="79" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k2S-Yr-8Y1" id="MIz-5j-5nY">
@@ -727,7 +727,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.19997459649999999" green="0.2000150084" blue="0.1999689043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="yjB-1V-eLc" rowHeight="44" style="IBUITableViewCellStyleDefault" id="IbG-1d-EFe">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="defaultKeys_3" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="yjB-1V-eLc" rowHeight="44" style="IBUITableViewCellStyleDefault" id="IbG-1d-EFe">
                                         <rect key="frame" x="0.0" y="123" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IbG-1d-EFe" id="Fxk-Os-0iq">
@@ -745,7 +745,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.19997459649999999" green="0.2000150084" blue="0.1999689043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="GwJ-EC-dcT" rowHeight="44" style="IBUITableViewCellStyleDefault" id="m49-O2-EDq">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="defaultKeys_4" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="GwJ-EC-dcT" rowHeight="44" style="IBUITableViewCellStyleDefault" id="m49-O2-EDq">
                                         <rect key="frame" x="0.0" y="167" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m49-O2-EDq" id="FzO-Jp-YIT">
@@ -763,7 +763,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.19997459649999999" green="0.2000150084" blue="0.1999689043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="RsI-Jh-KdK" rowHeight="44" style="IBUITableViewCellStyleDefault" id="HqH-PA-Qx7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="defaultKeys_5" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="RsI-Jh-KdK" rowHeight="44" style="IBUITableViewCellStyleDefault" id="HqH-PA-Qx7">
                                         <rect key="frame" x="0.0" y="211" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HqH-PA-Qx7" id="76S-MV-4ln">
@@ -781,7 +781,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.19997459649999999" green="0.2000150084" blue="0.1999689043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="ym1-of-3uw" rowHeight="44" style="IBUITableViewCellStyleDefault" id="SAE-8J-IxT">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="defaultKeys_6" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="ym1-of-3uw" rowHeight="44" style="IBUITableViewCellStyleDefault" id="SAE-8J-IxT">
                                         <rect key="frame" x="0.0" y="255" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SAE-8J-IxT" id="KPi-qx-Nzb">
@@ -799,7 +799,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.19997459649999999" green="0.2000150084" blue="0.1999689043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="oel-n9-Hrw" rowHeight="44" style="IBUITableViewCellStyleDefault" id="o0I-gm-ou1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="defaultKeys_7" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="oel-n9-Hrw" rowHeight="44" style="IBUITableViewCellStyleDefault" id="o0I-gm-ou1">
                                         <rect key="frame" x="0.0" y="299" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o0I-gm-ou1" id="gWN-J8-oxo">
@@ -817,7 +817,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.19997459649999999" green="0.2000150084" blue="0.1999689043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="97j-9x-JQj" rowHeight="44" style="IBUITableViewCellStyleDefault" id="9bY-BO-zzK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="defaultKeys_8" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="97j-9x-JQj" rowHeight="44" style="IBUITableViewCellStyleDefault" id="9bY-BO-zzK">
                                         <rect key="frame" x="0.0" y="343" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9bY-BO-zzK" id="zuk-eY-cVA">
@@ -835,7 +835,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.19997459649999999" green="0.2000150084" blue="0.1999689043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="tOG-cq-58L" rowHeight="44" style="IBUITableViewCellStyleDefault" id="fEE-L4-KZF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="defaultKeys_9" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="tOG-cq-58L" rowHeight="44" style="IBUITableViewCellStyleDefault" id="fEE-L4-KZF">
                                         <rect key="frame" x="0.0" y="387" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fEE-L4-KZF" id="XeM-ue-g62">
@@ -853,7 +853,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.19997459649999999" green="0.2000150084" blue="0.1999689043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="ndK-m6-Nxe" rowHeight="44" style="IBUITableViewCellStyleDefault" id="VdD-oY-s2c">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="virtualKeyboard" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="ndK-m6-Nxe" rowHeight="44" style="IBUITableViewCellStyleDefault" id="VdD-oY-s2c">
                                         <rect key="frame" x="0.0" y="431" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VdD-oY-s2c" id="5iX-Jl-GeC">

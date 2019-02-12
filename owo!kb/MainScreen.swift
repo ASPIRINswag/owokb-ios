@@ -20,23 +20,16 @@ class MainScreen: UIViewController {
         super.viewDidLoad()
     }
     
-    func ScreenChange(){
-        if UserDefaults.standard.integer(forKey: "ButtonsCount") <= 9{
-            print("Main screen is RegularButtongsContainer")
-            self.RegularButtongsContainer?.isHidden = false; self.VirtualFullsizeKB?.isHidden = true; self.CustomScreen?.isHidden = true
-        } else if UserDefaults.standard.integer(forKey: "ButtonsCount") == 10{
-            print("Main screen is VirtualFullsizeKB")
-            self.RegularButtongsContainer?.isHidden = true; self.VirtualFullsizeKB?.isHidden = false; self.CustomScreen?.isHidden = true
-            
-        }
-//        } else if UserDefaults.standard.integer(forKey: "ButtonsCount") <= 11{
-//            print("Main screen is CustomScreen")
-//            self.RegularButtongsContainer?.isHidden = true; self.VirtualFullsizeKB?.isHidden = true; self.CustomScreen?.isHidden = false
-//        }
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
-        if self.restorationIdentifier == "mainScreen" { ScreenChange()}
+        if self.restorationIdentifier == "mainScreen" {
+            if (UserDefaults.standard.string(forKey: "Layout")?.hasPrefix("defaultKeys"))! {
+                print("Main screen is RegularButtongsContainer")
+                self.RegularButtongsContainer?.isHidden = false; self.VirtualFullsizeKB?.isHidden = true; self.CustomScreen?.isHidden = true
+            } else if UserDefaults.standard.string(forKey: "Layout") == "virtualKeyboard" {
+                print("Main screen is VirtualFullsizeKB")
+                self.RegularButtongsContainer?.isHidden = true; self.VirtualFullsizeKB?.isHidden = false; self.CustomScreen?.isHidden = true
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

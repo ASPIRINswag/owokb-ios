@@ -131,13 +131,13 @@
 				46D06F7D219813970035EFAA /* AppDelegate.swift */,
 				46D06FAB219814880035EFAA /* MainScreen.swift */,
 				D12FADCE2210231A00FADE87 /* ScreenTypes */,
-				46D06FAD2198148D0035EFAA /* ClickProcessor.swift */,
 				46D06FBD219833C10035EFAA /* SettingsScreen.swift */,
+				46D06FAD2198148D0035EFAA /* ClickProcessor.swift */,
+				46D06FB3219814B00035EFAA /* KeyboardHideManager.swift */,
 				46D06F81219813970035EFAA /* Main.storyboard */,
 				46D06F84219813980035EFAA /* Assets.xcassets */,
 				46D06F86219813980035EFAA /* LaunchScreen.storyboard */,
 				46D06F89219813980035EFAA /* Info.plist */,
-				46D06FB3219814B00035EFAA /* KeyboardHideManager.swift */,
 			);
 			path = "owo!kb";
 			sourceTree = "<group>";
