@@ -67,29 +67,13 @@ class SettingsScreen: UITableViewController, UITextFieldDelegate {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.section == 2 {
-            if indexPath.row == 0 {
-                guard let url = URL(string: "https://github.com/kitty433cute/osukb_rbld/releases") else { return }
-                UIApplication.shared.open(url)
-            }
-        }
-        if self.restorationIdentifier == "layoutSettingsScreen" {
-            if let cell = tableView.cellForRow(at: indexPath) {
-                for i in 0...tableView.numberOfRows(inSection: 0) {
-                    tableView.cellForRow(at: [0,i])?.accessoryType = .none
+        if self.restorationIdentifier == "mainSettingsScreen" {
+            tableView.deselectRow(at: indexPath, animated: true)
+            if indexPath.section == 2 {
+                if indexPath.row == 0 {
+                    guard let url = URL(string: "https://github.com/kitty433cute/osukb_rbld/releases") else { return }
+                    UIApplication.shared.open(url)
                 }
-                cell.accessoryType = .checkmark
-                UserDefaults.standard.set(cell.restorationIdentifier!, forKey: "Layout")
-                print("layout changed to:", cell.restorationIdentifier!)
-            }
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if self.restorationIdentifier == "layoutSettingsScreen" {
-            if cell.restorationIdentifier! as String == UserDefaults.standard.string(forKey: "Layout"){
-                cell.accessoryType = .checkmark
             }
         }
     }
@@ -97,7 +81,7 @@ class SettingsScreen: UITableViewController, UITextFieldDelegate {
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 2 {
             if self.restorationIdentifier == "mainSettingsScreen" {
-                return "Version: \(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString")  as! String) \nBuild: \(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String) \n\nWork with network by BlueSocket\nCopyright © 2016 IBM. All rights reserved."
+                return "Version: \(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString")  as! String) \nBuild: \(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String) \n\nThird-party software:\nBlueSocket under Apache license 2.0\n\nCopyright © 2016 IBM. All rights reserved."
             } else {
                 return ""
             }

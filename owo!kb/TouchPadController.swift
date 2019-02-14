@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomScreenCpntroller: UIViewController {
+class TouchPadController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

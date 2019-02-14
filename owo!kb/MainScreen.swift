@@ -22,7 +22,7 @@ class MainScreen: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if self.restorationIdentifier == "mainScreen" {
-            if (UserDefaults.standard.string(forKey: "Layout")?.hasPrefix("defaultKeys"))! {
+            if UserDefaults.standard.string(forKey: "Layout") == "defaultKeys" {
                 print("Main screen is RegularButtongsContainer")
                 self.RegularButtongsContainer?.isHidden = false; self.VirtualFullsizeKB?.isHidden = true; self.CustomScreen?.isHidden = true
             } else if UserDefaults.standard.string(forKey: "Layout") == "virtualKeyboard" {

@@ -38,7 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.register(defaults: ["ServerIp" : "192.168.0.1"])
         UserDefaults.standard.register(defaults: ["ServerPort" : "727"])
         UserDefaults.standard.register(defaults: ["NetProtocol" : "0"]) //0 - UDP; 1 - TCP
-        UserDefaults.standard.register(defaults: ["Layout" : "defaultKeys_2"])
+        UserDefaults.standard.register(defaults: ["Layout" : "defaultKeys"])
+        UserDefaults.standard.register(defaults: ["ButtonsCount" : 2])
         
         //some useless things
         UserDefaults.standard.register(defaults: ["Taptic" : false])

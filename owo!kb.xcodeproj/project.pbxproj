@@ -17,9 +17,10 @@
 		46D06FAE2198148D0035EFAA /* ClickProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D06FAD2198148D0035EFAA /* ClickProcessor.swift */; };
 		46D06FB4219814B00035EFAA /* KeyboardHideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D06FB3219814B00035EFAA /* KeyboardHideManager.swift */; };
 		46D06FBE219833C10035EFAA /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D06FBD219833C10035EFAA /* SettingsScreen.swift */; };
-		D12FADD02210235F00FADE87 /* CustomScreenCpntroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12FADCF2210235F00FADE87 /* CustomScreenCpntroller.swift */; };
+		D12FADD02210235F00FADE87 /* TouchPadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12FADCF2210235F00FADE87 /* TouchPadController.swift */; };
 		D12FADD2221024EF00FADE87 /* VirtualKeyboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12FADD1221024EF00FADE87 /* VirtualKeyboardController.swift */; };
 		D13740D0220F0EA3004AAFB9 /* ButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13740CF220F0EA3004AAFB9 /* ButtonsController.swift */; };
+		D13AB15D2214938D008C33FC /* SettingsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13AB15C2214938D008C33FC /* SettingsLayout.swift */; };
 		D16807EB2211CF4500F0B5A6 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D16807EA2211CF4500F0B5A6 /* Socket.framework */; };
 		D16807EC2211CF4500F0B5A6 /* Socket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D16807EA2211CF4500F0B5A6 /* Socket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -72,9 +73,10 @@
 		46D06FAD2198148D0035EFAA /* ClickProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickProcessor.swift; sourceTree = "<group>"; };
 		46D06FB3219814B00035EFAA /* KeyboardHideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHideManager.swift; sourceTree = "<group>"; };
 		46D06FBD219833C10035EFAA /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
-		D12FADCF2210235F00FADE87 /* CustomScreenCpntroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScreenCpntroller.swift; sourceTree = "<group>"; };
+		D12FADCF2210235F00FADE87 /* TouchPadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchPadController.swift; sourceTree = "<group>"; };
 		D12FADD1221024EF00FADE87 /* VirtualKeyboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualKeyboardController.swift; sourceTree = "<group>"; };
 		D13740CF220F0EA3004AAFB9 /* ButtonsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsController.swift; sourceTree = "<group>"; };
+		D13AB15C2214938D008C33FC /* SettingsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLayout.swift; sourceTree = "<group>"; };
 		D16807EA2211CF4500F0B5A6 /* Socket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Socket.framework; path = Carthage/Build/iOS/Socket.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,8 +132,8 @@
 			children = (
 				46D06F7D219813970035EFAA /* AppDelegate.swift */,
 				46D06FAB219814880035EFAA /* MainScreen.swift */,
-				D12FADCE2210231A00FADE87 /* ScreenTypes */,
-				46D06FBD219833C10035EFAA /* SettingsScreen.swift */,
+				D13AB15B22149306008C33FC /* Settings */,
+				D12FADCE2210231A00FADE87 /* Screens */,
 				46D06FAD2198148D0035EFAA /* ClickProcessor.swift */,
 				46D06FB3219814B00035EFAA /* KeyboardHideManager.swift */,
 				46D06F81219813970035EFAA /* Main.storyboard */,
@@ -160,14 +162,14 @@
 			path = "owo!kbUITests";
 			sourceTree = "<group>";
 		};
-		D12FADCE2210231A00FADE87 /* ScreenTypes */ = {
+		D12FADCE2210231A00FADE87 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				D13740CF220F0EA3004AAFB9 /* ButtonsController.swift */,
 				D12FADD1221024EF00FADE87 /* VirtualKeyboardController.swift */,
-				D12FADCF2210235F00FADE87 /* CustomScreenCpntroller.swift */,
+				D12FADCF2210235F00FADE87 /* TouchPadController.swift */,
 			);
-			name = ScreenTypes;
+			name = Screens;
 			sourceTree = "<group>";
 		};
 		D135E46121F7823F00BE45AE /* Frameworks */ = {
@@ -176,6 +178,15 @@
 				D16807EA2211CF4500F0B5A6 /* Socket.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D13AB15B22149306008C33FC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				46D06FBD219833C10035EFAA /* SettingsScreen.swift */,
+				D13AB15C2214938D008C33FC /* SettingsLayout.swift */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,7 +326,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D12FADD02210235F00FADE87 /* CustomScreenCpntroller.swift in Sources */,
+				D13AB15D2214938D008C33FC /* SettingsLayout.swift in Sources */,
+				D12FADD02210235F00FADE87 /* TouchPadController.swift in Sources */,
 				46D06FBE219833C10035EFAA /* SettingsScreen.swift in Sources */,
 				D13740D0220F0EA3004AAFB9 /* ButtonsController.swift in Sources */,
 				46D06FAC219814880035EFAA /* MainScreen.swift in Sources */,
