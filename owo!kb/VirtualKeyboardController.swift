@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VirtualKeyboardController: UIViewController,UITextFieldDelegate {
+class VirtualKeyboardController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class VirtualKeyboardController: UIViewController,UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        ClickProcessor().keyUpToServer("Enter")
+        ClickProcessor().keyUpToServer("enter")
         LastChar.text = "Enter"
         //HackTextField.resignFirstResponder()
         return false
@@ -58,6 +58,8 @@ class VirtualKeyboardController: UIViewController,UITextFieldDelegate {
         HackTextField.resignFirstResponder()
         NotificationCenter.default.removeObserver(self)
     }
+    
+    
     
     /*
     // MARK: - Navigation
