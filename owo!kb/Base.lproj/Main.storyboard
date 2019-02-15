@@ -330,7 +330,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4w-P1-32S">
-                                            <rect key="frame" x="0.0" y="0.0" width="121" height="13"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="176" height="112"/>
                                             <color key="backgroundColor" red="0.74296838050000003" green="0.1844374835" blue="0.48011738059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" button="YES" keyboardKey="YES"/>
@@ -802,7 +802,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
                                                     <connections>
-                                                        <action selector="IpWasChanged:" destination="C2E-Pd-Sn9" eventType="editingDidEnd" id="0V8-mI-OXo"/>
                                                         <action selector="LayoutButtonsNumAction:" destination="NBu-nX-Wy0" eventType="editingDidEnd" id="Rxh-J1-TxG"/>
                                                     </connections>
                                                 </textField>
@@ -832,16 +831,16 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Z" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RKQ-Tn-BaK">
+                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Z" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKQ-Tn-BaK">
                                                     <rect key="frame" x="301" y="7" width="42" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="pCf-8Z-haY"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
                                                     <connections>
-                                                        <action selector="IpWasChanged:" destination="C2E-Pd-Sn9" eventType="editingDidEnd" id="cpG-BL-vtK"/>
+                                                        <action selector="ButtonKey1Action:" destination="NBu-nX-Wy0" eventType="editingDidEnd" id="CMT-pC-sdn"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -866,16 +865,16 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="X" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DB9-7n-UCQ">
+                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="X" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DB9-7n-UCQ">
                                                     <rect key="frame" x="301" y="7" width="42" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="OcK-79-JFe"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
                                                     <connections>
-                                                        <action selector="IpWasChanged:" destination="C2E-Pd-Sn9" eventType="editingDidEnd" id="m9A-ZM-xLH"/>
+                                                        <action selector="ButtonKey2Action:" destination="NBu-nX-Wy0" eventType="editingDidEnd" id="wsV-vr-ewU"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -900,16 +899,16 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="D" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="oWh-jL-zXI">
+                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="D" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oWh-jL-zXI">
                                                     <rect key="frame" x="301" y="7" width="42" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="iy7-rO-C3J"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
                                                     <connections>
-                                                        <action selector="IpWasChanged:" destination="C2E-Pd-Sn9" eventType="editingDidEnd" id="laz-oU-pgq"/>
+                                                        <action selector="ButtonKey3Action:" destination="NBu-nX-Wy0" eventType="editingDidEnd" id="aQV-Kh-h1G"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -934,16 +933,16 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="F" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Rc1-E0-sa8">
+                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="F" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rc1-E0-sa8">
                                                     <rect key="frame" x="301" y="7" width="42" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="Amy-QD-gfD"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
                                                     <connections>
-                                                        <action selector="IpWasChanged:" destination="C2E-Pd-Sn9" eventType="editingDidEnd" id="W1x-aG-2tt"/>
+                                                        <action selector="ButtonKey4Action:" destination="NBu-nX-Wy0" eventType="editingDidEnd" id="uf6-r3-gCj"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -968,16 +967,16 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="G" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Yrb-sq-a72">
+                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="G" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yrb-sq-a72">
                                                     <rect key="frame" x="301" y="7" width="42" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="8Az-4S-RsX"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
                                                     <connections>
-                                                        <action selector="IpWasChanged:" destination="C2E-Pd-Sn9" eventType="editingDidEnd" id="cDT-cB-xLr"/>
+                                                        <action selector="ButtonKey5Action:" destination="NBu-nX-Wy0" eventType="editingDidEnd" id="cHJ-i4-e0U"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -1002,16 +1001,16 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="H" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xib-LU-ul2">
+                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="H" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xib-LU-ul2">
                                                     <rect key="frame" x="301" y="7" width="42" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="5ie-T8-auL"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
                                                     <connections>
-                                                        <action selector="IpWasChanged:" destination="C2E-Pd-Sn9" eventType="editingDidEnd" id="Vhb-eB-tV9"/>
+                                                        <action selector="ButtonKey6Action:" destination="NBu-nX-Wy0" eventType="editingDidEnd" id="38T-cD-Dpi"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -1036,16 +1035,16 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="J" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3b9-cU-xpb">
+                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="J" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3b9-cU-xpb">
                                                     <rect key="frame" x="301" y="7" width="42" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="jhE-hc-Z1V"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
                                                     <connections>
-                                                        <action selector="IpWasChanged:" destination="C2E-Pd-Sn9" eventType="editingDidEnd" id="A5y-HM-9Sx"/>
+                                                        <action selector="ButtonKey7Action:" destination="NBu-nX-Wy0" eventType="editingDidEnd" id="4ij-jW-XI7"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -1070,16 +1069,16 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="K" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jyW-SD-3eO">
+                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="K" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jyW-SD-3eO">
                                                     <rect key="frame" x="301" y="7" width="42" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="yTv-eK-hku"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
                                                     <connections>
-                                                        <action selector="IpWasChanged:" destination="C2E-Pd-Sn9" eventType="editingDidEnd" id="auT-9O-Y97"/>
+                                                        <action selector="ButtonKey8Action:" destination="NBu-nX-Wy0" eventType="editingDidEnd" id="yHb-vB-hXq"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -1104,16 +1103,16 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="L" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FQz-uY-VTt">
+                                                <textField opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FQz-uY-VTt">
                                                     <rect key="frame" x="301" y="7" width="42" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="614-kv-qdB"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
                                                     <connections>
-                                                        <action selector="IpWasChanged:" destination="C2E-Pd-Sn9" eventType="editingDidEnd" id="enZ-eK-6Ef"/>
+                                                        <action selector="ButtonKey9Action:" destination="NBu-nX-Wy0" eventType="editingDidEnd" id="niE-Cg-Hh6"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -1129,6 +1128,15 @@
                         </sections>
                     </tableView>
                     <connections>
+                        <outlet property="ButtonKey1" destination="RKQ-Tn-BaK" id="yax-1c-Usk"/>
+                        <outlet property="ButtonKey2" destination="DB9-7n-UCQ" id="QZ6-3Z-4oU"/>
+                        <outlet property="ButtonKey3" destination="oWh-jL-zXI" id="mNg-zd-beK"/>
+                        <outlet property="ButtonKey4" destination="Rc1-E0-sa8" id="Fah-W5-pUq"/>
+                        <outlet property="ButtonKey5" destination="Yrb-sq-a72" id="oCx-5Y-Cgj"/>
+                        <outlet property="ButtonKey6" destination="xib-LU-ul2" id="Y8T-dj-aHh"/>
+                        <outlet property="ButtonKey7" destination="3b9-cU-xpb" id="UVi-pK-Vga"/>
+                        <outlet property="ButtonKey8" destination="jyW-SD-3eO" id="Lfs-qX-6fv"/>
+                        <outlet property="ButtonKey9" destination="FQz-uY-VTt" id="NXc-QR-OIH"/>
                         <outlet property="LayoutButtonsNum" destination="lJm-J1-Mfd" id="0gs-XO-iCN"/>
                     </connections>
                 </tableViewController>
