@@ -18,10 +18,17 @@ class VirtualKeyboardController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var LastChar: UILabel!
     @IBOutlet weak var HackTextField: UITextField!
     @IBAction func HackTextFieldAction(_ sender: Any) {
-        if HackTextField.text == "" {
+        switch HackTextField.text {
+        case "":
             ClickProcessor().keyUpToServer("backspace")
             LastChar.text = "Backspace"
-        } else {
+        case "\\_":
+            ClickProcessor().keyUpToServer("underscore")
+            LastChar.text = "_"
+        case "\\ ":
+            ClickProcessor().keyUpToServer("space")
+            LastChar.text = "Space"
+        default:
             ClickProcessor().keyUpToServer(String(HackTextField.text!.dropFirst()))
             LastChar.text = String(HackTextField.text!.dropFirst())
         }
@@ -38,7 +45,7 @@ class VirtualKeyboardController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if UserDefaults.standard.integer(forKey: "ButtonsCount") == 10 {
+       if UserDefaults.standard.string(forKey: "Layout") == "virtualKeyboard" {
             NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: UIResponder.keyboardDidHideNotification, object: nil)
             HackTextField.delegate = self
             HackTextField.becomeFirstResponder()
@@ -48,7 +55,7 @@ class VirtualKeyboardController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func keyboardWillDisappear() {
-        if UserDefaults.standard.integer(forKey: "ButtonsCount") == 10 {
+        if UserDefaults.standard.string(forKey: "Layout") == "virtualKeyboard" {
             HackTextField.becomeFirstResponder()
         }
     }
