@@ -37,7 +37,6 @@ class SettingsLayout: UITableViewController, UITextFieldDelegate {
         }
     }
 
-    
     @IBOutlet weak var LayoutButtonsNum: UITextField!
     @IBAction func LayoutButtonsNumAction(_ sender: Any) {
         if Int(LayoutButtonsNum.text!)! > 9 {
@@ -50,47 +49,65 @@ class SettingsLayout: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var ButtonKey1: UITextField!
     @IBAction func ButtonKey1Action(_ sender: Any) {
-        UserDefaults.standard.set(String(ButtonKey1.text!.first!).uppercased(), forKey: "ButtonKey1")
+        if ButtonKey1.text != "" {
+            UserDefaults.standard.set(String(ButtonKey1.text!.first!).uppercased(), forKey: "ButtonKey1")
+        }
     }
     
     @IBOutlet weak var ButtonKey2: UITextField!
     @IBAction func ButtonKey2Action(_ sender: Any) {
-        UserDefaults.standard.set(String(ButtonKey2.text!.first!).uppercased(), forKey: "ButtonKey2")
+        if ButtonKey2.text != "" {
+            UserDefaults.standard.set(String(ButtonKey2.text!.first!).uppercased(), forKey: "ButtonKey2")
+        }
     }
     
     @IBOutlet weak var ButtonKey3: UITextField!
     @IBAction func ButtonKey3Action(_ sender: Any) {
-        UserDefaults.standard.set(String(ButtonKey3.text!.first!).uppercased(), forKey: "ButtonKey3")
+        if ButtonKey3.text != "" {
+            UserDefaults.standard.set(String(ButtonKey3.text!.first!).uppercased(), forKey: "ButtonKey3")
+        }
     }
     
     @IBOutlet weak var ButtonKey4: UITextField!
     @IBAction func ButtonKey4Action(_ sender: Any) {
-        UserDefaults.standard.set(String(ButtonKey4.text!.first!).uppercased(), forKey: "ButtonKey4")
+        if ButtonKey4.text != "" {
+            UserDefaults.standard.set(String(ButtonKey4.text!.first!).uppercased(), forKey: "ButtonKey4")
+        }
     }
     
     @IBOutlet weak var ButtonKey5: UITextField!
     @IBAction func ButtonKey5Action(_ sender: Any) {
-        UserDefaults.standard.set(String(ButtonKey5.text!.first!).uppercased(), forKey: "ButtonKey5")
+        if ButtonKey5.text != "" {
+            UserDefaults.standard.set(String(ButtonKey5.text!.first!).uppercased(), forKey: "ButtonKey5")
+        }
     }
     
     @IBOutlet weak var ButtonKey6: UITextField!
     @IBAction func ButtonKey6Action(_ sender: Any) {
-        UserDefaults.standard.set(String(ButtonKey6.text!.first!).uppercased(), forKey: "ButtonKey6")
+        if ButtonKey6.text != "" {
+            UserDefaults.standard.set(String(ButtonKey6.text!.first!).uppercased(), forKey: "ButtonKey6")
+        }
     }
     
     @IBOutlet weak var ButtonKey7: UITextField!
     @IBAction func ButtonKey7Action(_ sender: Any) {
-        UserDefaults.standard.set(String(ButtonKey7.text!.first!).uppercased(), forKey: "ButtonKey7")
+        if ButtonKey7.text != "" {
+            UserDefaults.standard.set(String(ButtonKey7.text!.first!).uppercased(), forKey: "ButtonKey7")
+        }
     }
     
     @IBOutlet weak var ButtonKey8: UITextField!
     @IBAction func ButtonKey8Action(_ sender: Any) {
-        UserDefaults.standard.set(String(ButtonKey8.text!.first!).uppercased(), forKey: "ButtonKey8")
+        if ButtonKey8.text != "" {
+            UserDefaults.standard.set(String(ButtonKey8.text!.first!).uppercased(), forKey: "ButtonKey8")
+        }
     }
     
     @IBOutlet weak var ButtonKey9: UITextField!
     @IBAction func ButtonKey9Action(_ sender: Any) {
-        UserDefaults.standard.set(String(ButtonKey9.text!.first!).uppercased(), forKey: "ButtonKey9")
+        if ButtonKey9.text != "" {
+            UserDefaults.standard.set(String(ButtonKey9.text!.first!).uppercased(), forKey: "ButtonKey9")
+        }
     }
     
     override func viewDidLoad() {

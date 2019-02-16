@@ -311,7 +311,7 @@
         <scene sceneID="RkK-xD-21T">
             <objects>
                 <collectionViewController storyboardIdentifier="ButtonsScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6xu-R2-Vs0" customClass="ButtonsController" customModule="owo_kb" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" dataMode="prototypes" id="Vwf-hc-Mx5">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" dataMode="prototypes" prefetchingEnabled="NO" id="Vwf-hc-Mx5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.19997459649999999" green="0.2000150084" blue="0.1999689043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -322,15 +322,15 @@
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="ButtonCell" id="T8T-el-Tv9" customClass="ButtonControllerCell" customModule="owo_kb" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ButtonCell" id="Nf9-3A-2M2" customClass="ButtonControllerCell" customModule="owo_kb" customModuleProvider="target">
                                 <rect key="frame" x="10" y="10" width="176" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="176" height="176"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4w-P1-32S">
-                                            <rect key="frame" x="0.0" y="0.0" width="176" height="112"/>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvd-Pr-jDN">
+                                            <rect key="frame" x="0.0" y="0.0" width="176" height="176"/>
                                             <color key="backgroundColor" red="0.74296838050000003" green="0.1844374835" blue="0.48011738059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" button="YES" keyboardKey="YES"/>
@@ -340,21 +340,21 @@
                                             <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="Z"/>
                                             <connections>
-                                                <action selector="keyDown:" destination="T8T-el-Tv9" eventType="touchDown" id="Kdn-GT-K1h"/>
-                                                <action selector="keyUp:" destination="T8T-el-Tv9" eventType="touchUpInside" id="Ip3-9B-BUi"/>
-                                                <action selector="keyUp:" destination="T8T-el-Tv9" eventType="touchUpOutside" id="JFA-JH-wKN"/>
+                                                <action selector="keyDown:" destination="Nf9-3A-2M2" eventType="touchDown" id="7dU-0m-aua"/>
+                                                <action selector="keyUp:" destination="Nf9-3A-2M2" eventType="touchUpInside" id="09O-4G-bMZ"/>
+                                                <action selector="keyUp:" destination="Nf9-3A-2M2" eventType="touchUpOutside" id="fTX-OK-jDT"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="K4w-P1-32S" firstAttribute="top" secondItem="T8T-el-Tv9" secondAttribute="top" id="3a6-XU-lcs"/>
-                                    <constraint firstAttribute="trailing" secondItem="K4w-P1-32S" secondAttribute="trailing" id="4g2-UA-IJE"/>
-                                    <constraint firstItem="K4w-P1-32S" firstAttribute="leading" secondItem="T8T-el-Tv9" secondAttribute="leading" id="SF0-wz-5l6"/>
-                                    <constraint firstAttribute="bottom" secondItem="K4w-P1-32S" secondAttribute="bottom" id="sT3-E5-J7O"/>
+                                    <constraint firstAttribute="bottom" secondItem="tvd-Pr-jDN" secondAttribute="bottom" id="60T-Q8-ubQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="tvd-Pr-jDN" secondAttribute="trailing" id="jBH-YX-Y14"/>
+                                    <constraint firstItem="tvd-Pr-jDN" firstAttribute="leading" secondItem="Nf9-3A-2M2" secondAttribute="leading" id="w7a-mi-1Ry"/>
+                                    <constraint firstItem="tvd-Pr-jDN" firstAttribute="top" secondItem="Nf9-3A-2M2" secondAttribute="top" id="wKk-Pp-2Wx"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="button" destination="K4w-P1-32S" id="cMt-d5-uXJ"/>
+                                    <outlet property="button" destination="tvd-Pr-jDN" id="CUX-2d-bJy"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -367,7 +367,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5td-9R-4jm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-444" y="715"/>
+            <point key="canvasLocation" x="-444" y="714.69265367316348"/>
         </scene>
         <!--Virtual Keyboard Controller-->
         <scene sceneID="exb-MC-iEd">
@@ -906,7 +906,7 @@
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartQuotesType="no"/>
                                                     <connections>
                                                         <action selector="ButtonKey3Action:" destination="NBu-nX-Wy0" eventType="editingDidEnd" id="aQV-Kh-h1G"/>
                                                     </connections>
