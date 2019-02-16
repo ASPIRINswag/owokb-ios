@@ -23,6 +23,7 @@
 		D13AB15D2214938D008C33FC /* SettingsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13AB15C2214938D008C33FC /* SettingsLayout.swift */; };
 		D16807EB2211CF4500F0B5A6 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D16807EA2211CF4500F0B5A6 /* Socket.framework */; };
 		D16807EC2211CF4500F0B5A6 /* Socket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D16807EA2211CF4500F0B5A6 /* Socket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D1FC0B1122181B0100A72C88 /* StatisticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0B1022181B0100A72C88 /* StatisticsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		D13740CF220F0EA3004AAFB9 /* ButtonsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsController.swift; sourceTree = "<group>"; };
 		D13AB15C2214938D008C33FC /* SettingsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLayout.swift; sourceTree = "<group>"; };
 		D16807EA2211CF4500F0B5A6 /* Socket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Socket.framework; path = Carthage/Build/iOS/Socket.framework; sourceTree = "<group>"; };
+		D1FC0B1022181B0100A72C88 /* StatisticsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 			children = (
 				46D06FBD219833C10035EFAA /* SettingsScreen.swift */,
 				D13AB15C2214938D008C33FC /* SettingsLayout.swift */,
+				D1FC0B1022181B0100A72C88 /* StatisticsController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				D12FADD02210235F00FADE87 /* TouchPadController.swift in Sources */,
 				46D06FBE219833C10035EFAA /* SettingsScreen.swift in Sources */,
 				D13740D0220F0EA3004AAFB9 /* ButtonsController.swift in Sources */,
+				D1FC0B1122181B0100A72C88 /* StatisticsController.swift in Sources */,
 				46D06FAC219814880035EFAA /* MainScreen.swift in Sources */,
 				46D06F7E219813970035EFAA /* AppDelegate.swift in Sources */,
 				46D06FB4219814B00035EFAA /* KeyboardHideManager.swift in Sources */,

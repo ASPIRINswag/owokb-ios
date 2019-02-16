@@ -55,6 +55,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.register(defaults: ["ButtonKey8" : "K"])
         UserDefaults.standard.register(defaults: ["ButtonKey9" : "L"])
         
+        //statistics
+        UserDefaults.standard.register(defaults: ["PressedBigButtons" : 0])
+        UserDefaults.standard.register(defaults: ["iOSKb" : 0])
+        UserDefaults.standard.register(defaults: ["sentUDP" : 0])
+        UserDefaults.standard.register(defaults: ["sentTCP" : 0])
+        
         StartSerter()
         
         return true

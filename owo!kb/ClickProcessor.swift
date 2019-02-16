@@ -19,12 +19,15 @@ public class ClickProcessor {
     let delegate = UIApplication.shared.delegate as! AppDelegate
 
     public func keyDownToServer(_ keyName: String) {
+        UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "PressedBigButtons") + 1, forKey: "PressedBigButtons")
         do {
             if UserDefaults.standard.integer(forKey: "NetProtocol") == 0 {
                 print("UDP Key", keyName, "down to", UserDefaults.standard.string(forKey: "ServerIp")! + ":" + String(UserDefaults.standard.integer(forKey: "ServerPort")))
+                UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "sentUDP") + 1, forKey: "sentUDP")
                 try delegate.socketUDP.write(from: ("keyboard:key," + keyName + "_down").data(using: .utf8)!, to: Socket.createAddress(for: UserDefaults.standard.string(forKey: "ServerIp") ?? "192.168.0.1", on: Int32(UserDefaults.standard.integer(forKey: "ServerPort")))!)
             } else if UserDefaults.standard.integer(forKey: "NetProtocol") == 1 {
                 print("TCP Key", keyName, "down to", UserDefaults.standard.string(forKey: "ServerIp")! + ":" + String(UserDefaults.standard.integer(forKey: "ServerPort")))
+                UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "sentTCP") + 1, forKey: "sentTCP")
                 delegate.socketTCP = try Socket.create(connectedUsing: Socket.Signature(protocolFamily: .inet, socketType: .stream, proto: .tcp, hostname: UserDefaults.standard.string(forKey: "ServerIp"), port: Int32(UserDefaults.standard.string(forKey: "ServerPort")!))!)
                 try delegate.socketTCP.write(from: ("keyboard:key," + keyName + "_down").data(using: .utf8)!)
             }
@@ -50,9 +53,11 @@ public class ClickProcessor {
         do {
             if UserDefaults.standard.integer(forKey: "NetProtocol") == 0 {
                 print("UDP Key", keyName, "up")
+                UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "sentUDP") + 1, forKey: "sentUDP")
                 try delegate.socketUDP.write(from: ("keyboard:key," + keyName + "_up").data(using: .utf8)!, to: Socket.createAddress(for: UserDefaults.standard.string(forKey: "ServerIp") ?? "192.168.0.1", on: Int32(UserDefaults.standard.integer(forKey: "ServerPort")))!)
             }else if UserDefaults.standard.integer(forKey: "NetProtocol") == 1 {
                 print("TCP Key", keyName, "up")
+                UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "sentTCP") + 1, forKey: "sentTCP")
                 delegate.socketTCP = try Socket.create(connectedUsing: Socket.Signature(protocolFamily: .inet, socketType: .stream, proto: .tcp, hostname: UserDefaults.standard.string(forKey: "ServerIp"), port: Int32(UserDefaults.standard.string(forKey: "ServerPort")!))!)
                 try delegate.socketTCP.write(from: ("keyboard:key," + keyName + "_up").data(using: .utf8)!)
             }

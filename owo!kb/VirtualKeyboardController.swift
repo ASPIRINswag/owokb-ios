@@ -18,6 +18,7 @@ class VirtualKeyboardController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var LastChar: UILabel!
     @IBOutlet weak var HackTextField: UITextField!
     @IBAction func HackTextFieldAction(_ sender: Any) {
+        UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "iOSKb") + 1, forKey: "iOSKb")
         switch HackTextField.text {
         case "":
             ClickProcessor().keyUpToServer("backspace")

@@ -81,7 +81,7 @@ class SettingsScreen: UITableViewController, UITextFieldDelegate {
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 2 {
             if self.restorationIdentifier == "mainSettingsScreen" {
-                return "Version: \(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString")  as! String) \nBuild: \(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String) \n\nThird-party software:\nBlueSocket under Apache license 2.0\n\nCopyright © 2016 IBM. All rights reserved."
+                return "Version: \(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString")  as! String) \nBuild: \(Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String) \n\nWork with network by BlueSocket under the terms of Apache license 2.0\n\nCopyright © 2016 IBM. All rights reserved."
             } else {
                 return ""
             }
