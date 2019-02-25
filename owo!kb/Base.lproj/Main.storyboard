@@ -358,7 +358,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvd-Pr-jDN">
-                                            <rect key="frame" x="0.0" y="0.0" width="569" height="463"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="176" height="112"/>
                                             <color key="backgroundColor" red="0.74296838050000003" green="0.1844374835" blue="0.48011738059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <accessibility key="accessibilityConfiguration">
                                                 <accessibilityTraits key="traits" button="YES" keyboardKey="YES"/>
@@ -1292,26 +1292,21 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Reset statistics" id="ceB-1H-vYS">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="64" id="yQA-uo-U8X">
-                                        <rect key="frame" x="0.0" y="343.5" width="375" height="64"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="7or-td-6Pv" style="IBUITableViewCellStyleDefault" id="yQA-uo-U8X">
+                                        <rect key="frame" x="0.0" y="343.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yQA-uo-U8X" id="5en-Rn-Q1s">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4a-so-Y8f">
-                                                    <rect key="frame" x="148" y="6.5" width="79" height="51"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                                    <state key="normal" title="Reset"/>
-                                                    <connections>
-                                                        <action selector="ResetStatistics:" destination="koW-Si-PUw" eventType="touchUpInside" id="Eti-NW-QwV"/>
-                                                    </connections>
-                                                </button>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Reset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7or-td-6Pv">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.74296838050000003" green="0.1844374835" blue="0.48011738059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="v4a-so-Y8f" firstAttribute="centerY" secondItem="5en-Rn-Q1s" secondAttribute="centerY" id="0lp-2b-RqH"/>
-                                                <constraint firstItem="v4a-so-Y8f" firstAttribute="centerX" secondItem="5en-Rn-Q1s" secondAttribute="centerX" id="144-0s-mAf"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.19997459649999999" green="0.2000150084" blue="0.1999689043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
@@ -1321,7 +1316,6 @@
                     </tableView>
                     <connections>
                         <outlet property="BigButtonsNum" destination="tgi-pl-x4v" id="weX-Ze-ws6"/>
-                        <outlet property="ResetButton" destination="v4a-so-Y8f" id="wMg-e9-6ks"/>
                         <outlet property="Table" destination="5O6-Yv-BCP" id="we6-ob-nMu"/>
                         <outlet property="iOSkbNum" destination="X9j-aP-0jf" id="Lyp-o0-ssN"/>
                         <outlet property="sentTCPnum" destination="egZ-O2-MSm" id="sGe-Fb-XWK"/>

@@ -17,25 +17,28 @@ class StatisticsController: UITableViewController {
     @IBOutlet weak var sentUDPnum: UILabel!
     @IBOutlet weak var sentTCPnum: UILabel!
     
-    @IBOutlet weak var ResetButton: UIButton!
-    @IBAction func ResetStatistics(_ sender: Any) {
-        
-        let alert = UIAlertController(title: "Do you want to reset?", message: "Warning! This action will erase all your statistics without any able to bring it back!", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-            print("deliting statistics")
-            UserDefaults.standard.set(0, forKey: "PressedBigButtons")
-            UserDefaults.standard.set(0, forKey: "iOSKb")
-            UserDefaults.standard.set(0, forKey: "sentUDP")
-            UserDefaults.standard.set(0, forKey: "sentTCP")
-            UIView.transition(with: self.Table, duration: 1.0, options: .transitionCrossDissolve, animations: {self.viewDidLoad()}, completion: nil)
-        }))
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
-        
-        if let popoverPresentationController = alert.popoverPresentationController {
-            popoverPresentationController.sourceView = self.ResetButton
-            popoverPresentationController.sourceRect = ResetButton.bounds
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 2 {
+            if indexPath.row == 0 {
+                let alert = UIAlertController(title: "Do you want to reset?", message: "Warning! This action will erase all your statistics without any able to bring it back!", preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                    print("deliting statistics")
+                    UserDefaults.standard.set(0, forKey: "PressedBigButtons")
+                    UserDefaults.standard.set(0, forKey: "iOSKb")
+                    UserDefaults.standard.set(0, forKey: "sentUDP")
+                    UserDefaults.standard.set(0, forKey: "sentTCP")
+                    UIView.transition(with: self.Table, duration: 0.8, options: .transitionFlipFromRight, animations: {self.viewDidLoad()}, completion: nil)
+                }))
+                alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+                
+                if let popoverPresentationController = alert.popoverPresentationController {
+                    popoverPresentationController.sourceView = self.tableView.cellForRow(at: indexPath)
+                    popoverPresentationController.sourceRect = tableView.cellForRow(at: indexPath)!.bounds
+                }
+                self.present(alert, animated: true, completion: nil)
+            }
         }
-        self.present(alert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
