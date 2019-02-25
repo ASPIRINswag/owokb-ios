@@ -17,50 +17,56 @@ public class ClickProcessor {
     //keyboard:key,N_down
     
     let delegate = UIApplication.shared.delegate as! AppDelegate
-
+    
     public func keyDownToServer(_ keyName: String) {
-        UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "PressedBigButtons") + 1, forKey: "PressedBigButtons")
-        do {
+        DispatchQueue.global(qos: .userInitiated).async {
             if UserDefaults.standard.integer(forKey: "NetProtocol") == 0 {
-                print("UDP Key", keyName, "down to", UserDefaults.standard.string(forKey: "ServerIp")! + ":" + String(UserDefaults.standard.integer(forKey: "ServerPort")))
-                UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "sentUDP") + 1, forKey: "sentUDP")
-                try delegate.socketUDP.write(from: ("keyboard:key," + keyName + "_down").data(using: .utf8)!, to: Socket.createAddress(for: UserDefaults.standard.string(forKey: "ServerIp") ?? "192.168.0.1", on: Int32(UserDefaults.standard.integer(forKey: "ServerPort")))!)
+                self.sentUDPpackage(keyName + "_down")
             } else if UserDefaults.standard.integer(forKey: "NetProtocol") == 1 {
-                print("TCP Key", keyName, "down to", UserDefaults.standard.string(forKey: "ServerIp")! + ":" + String(UserDefaults.standard.integer(forKey: "ServerPort")))
-                UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "sentTCP") + 1, forKey: "sentTCP")
-                delegate.socketTCP = try Socket.create(connectedUsing: Socket.Signature(protocolFamily: .inet, socketType: .stream, proto: .tcp, hostname: UserDefaults.standard.string(forKey: "ServerIp"), port: Int32(UserDefaults.standard.string(forKey: "ServerPort")!))!)
-                try delegate.socketTCP.write(from: ("keyboard:key," + keyName + "_down").data(using: .utf8)!)
+                self.sentTCPpackage(keyName + "_down")
             }
-        } catch let error {
-            guard let socketError = error as? Socket.Error else {
-                print("Unexpected error...")
-                return
+            DispatchQueue.main.async {
+                if UserDefaults.standard.bool(forKey: "Taptic") == true {
+                    self.inputFeedback()
+                }
+                UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "PressedBigButtons") + 1, forKey: "PressedBigButtons")
             }
-            print("Error reported: \(socketError.description)")
-        }
-        if UserDefaults.standard.bool(forKey: "Taptic") == true {
-            
-            //6s
-            AudioServicesPlaySystemSound(1520)
-            
-            //7 and newer
-            UIImpactFeedbackGenerator(style: .medium).prepare()
-            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         }
     }
 
-    public func keyUpToServer(_ keyName: String){
-        do {
+    public func keyUpToServer(_ keyName: String) {
+        DispatchQueue.global(qos: .userInitiated).async {
             if UserDefaults.standard.integer(forKey: "NetProtocol") == 0 {
-                print("UDP Key", keyName, "up")
-                UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "sentUDP") + 1, forKey: "sentUDP")
-                try delegate.socketUDP.write(from: ("keyboard:key," + keyName + "_up").data(using: .utf8)!, to: Socket.createAddress(for: UserDefaults.standard.string(forKey: "ServerIp") ?? "192.168.0.1", on: Int32(UserDefaults.standard.integer(forKey: "ServerPort")))!)
-            }else if UserDefaults.standard.integer(forKey: "NetProtocol") == 1 {
-                print("TCP Key", keyName, "up")
-                UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "sentTCP") + 1, forKey: "sentTCP")
-                delegate.socketTCP = try Socket.create(connectedUsing: Socket.Signature(protocolFamily: .inet, socketType: .stream, proto: .tcp, hostname: UserDefaults.standard.string(forKey: "ServerIp"), port: Int32(UserDefaults.standard.string(forKey: "ServerPort")!))!)
-                try delegate.socketTCP.write(from: ("keyboard:key," + keyName + "_up").data(using: .utf8)!)
+                self.sentUDPpackage(keyName + "_up")
+            } else if UserDefaults.standard.integer(forKey: "NetProtocol") == 1 {
+                self.sentTCPpackage(keyName + "_up")
             }
+            DispatchQueue.main.async {
+                if UserDefaults.standard.bool(forKey: "Taptic") == true {
+                    self.inputFeedback()
+                }
+                UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "PressedBigButtons") + 1, forKey: "PressedBigButtons")
+            }
+        }
+    }
+    
+    public func keyPressedToServer(_ keyName: String) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            if UserDefaults.standard.integer(forKey: "NetProtocol") == 0 {
+                self.sentUDPpackage(keyName + "_pressed")
+            } else if UserDefaults.standard.integer(forKey: "NetProtocol") == 1 {
+                self.sentTCPpackage(keyName + "_pressed")
+            }
+            DispatchQueue.main.async {
+                UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "iOSKb") + 1, forKey: "iOSKb")
+            }
+        }
+    }
+    
+    
+    internal func sentUDPpackage(_ package: String) {
+        do{
+            try delegate.socketUDP.write(from: (package).data(using: .utf8)!, to: Socket.createAddress(for: UserDefaults.standard.string(forKey: "ServerIp") ?? "192.168.0.1", on: Int32(UserDefaults.standard.integer(forKey: "ServerPort")))!)
         } catch let error {
             guard let socketError = error as? Socket.Error else {
                 print("Unexpected error...")
@@ -68,15 +74,32 @@ public class ClickProcessor {
             }
             print("Error reported: \(socketError.description)")
         }
-        if UserDefaults.standard.bool(forKey: "Taptic") == true {
-            
-            //6s
-            AudioServicesPlaySystemSound(1520)
-            
-            //7 and newer
-            UIImpactFeedbackGenerator(style: .medium).prepare()
-            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+        UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "sentUDP") + 1, forKey: "sentUDP")
+        print("UDP:", package)
+    }
+    
+    internal func sentTCPpackage(_ package: String){
+        do{
+            delegate.socketTCP = try Socket.create(connectedUsing: Socket.Signature(protocolFamily: .inet, socketType: .stream, proto: .tcp, hostname: UserDefaults.standard.string(forKey: "ServerIp"), port: Int32(UserDefaults.standard.string(forKey: "ServerPort")!))!)
+            try delegate.socketTCP.write(from: (package).data(using: .utf8)!)
+        } catch let error {
+            guard let socketError = error as? Socket.Error else {
+                print("Unexpected error...")
+                return
+            }
+            print("Error reported: \(socketError.description)")
         }
+        UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "sentTCP") + 1, forKey: "sentTCP")
+        print("TCP:", package)
+    }
+    
+    internal func inputFeedback(){
+        //6s
+        AudioServicesPlaySystemSound(1520)
+        
+        //7 and newer
+        UIImpactFeedbackGenerator(style: .medium).prepare()
+        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
     }
     
 }

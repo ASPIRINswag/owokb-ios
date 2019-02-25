@@ -82,6 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         StartSerter()
+        print("App did become active.")
     }
     
     func applicationWillTerminate(_ application: UIApplication) {

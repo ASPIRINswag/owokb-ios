@@ -18,19 +18,18 @@ class VirtualKeyboardController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var LastChar: UILabel!
     @IBOutlet weak var HackTextField: UITextField!
     @IBAction func HackTextFieldAction(_ sender: Any) {
-        UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "iOSKb") + 1, forKey: "iOSKb")
         switch HackTextField.text {
         case "":
-            ClickProcessor().keyUpToServer("backspace")
+            ClickProcessor().keyPressedToServer("backspace")
             LastChar.text = "Backspace"
         case "\\_":
-            ClickProcessor().keyUpToServer("underscore")
+            ClickProcessor().keyPressedToServer("underscore")
             LastChar.text = "_"
         case "\\ ":
-            ClickProcessor().keyUpToServer("space")
+            ClickProcessor().keyPressedToServer("space")
             LastChar.text = "Space"
         default:
-            ClickProcessor().keyUpToServer(String(HackTextField.text!.dropFirst()))
+            ClickProcessor().keyPressedToServer(String(HackTextField.text!.dropFirst()))
             LastChar.text = String(HackTextField.text!.dropFirst())
         }
         HackTextField.text = "\\"
@@ -38,7 +37,7 @@ class VirtualKeyboardController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        ClickProcessor().keyUpToServer("enter")
+        ClickProcessor().keyPressedToServer("enter")
         LastChar.text = "Enter"
         //HackTextField.resignFirstResponder()
         return false
