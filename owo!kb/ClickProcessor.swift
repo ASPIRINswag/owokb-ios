@@ -45,7 +45,6 @@ public class ClickProcessor {
                 if UserDefaults.standard.bool(forKey: "Taptic") == true {
                     self.inputFeedback()
                 }
-                UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "PressedBigButtons") + 1, forKey: "PressedBigButtons")
             }
         }
     }

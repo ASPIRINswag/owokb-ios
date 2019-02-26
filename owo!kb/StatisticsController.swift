@@ -19,6 +19,7 @@ class StatisticsController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 2 {
             if indexPath.row == 0 {
                 let alert = UIAlertController(title: "Do you want to reset?", message: "Warning! This action will erase all your statistics without any able to bring it back!", preferredStyle: .actionSheet)
