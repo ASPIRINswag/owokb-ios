@@ -12,6 +12,7 @@ import UIKit
 class SettingsLayout: UITableViewController, UITextFieldDelegate {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if self.restorationIdentifier == "layoutListingScreen" {
             if indexPath.section == 1 {
                 if let cell = tableView.cellForRow(at: indexPath) {
