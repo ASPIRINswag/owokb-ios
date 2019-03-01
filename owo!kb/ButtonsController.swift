@@ -81,9 +81,8 @@ class ButtonsController: UICollectionViewController, UICollectionViewDelegateFlo
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        coordinator.animateAlongsideTransition(in: view
-            , animation: { (UIViewControllerTransitionCoordinatorContext) in
-                self.collectionView.reloadData()
+        coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) in
+            self.collectionView.reloadData()
         }) { (UIViewControllerTransitionCoordinatorContext) in
             self.collectionView.reloadData()
         }
