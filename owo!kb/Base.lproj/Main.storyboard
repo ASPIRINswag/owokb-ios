@@ -771,6 +771,24 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.19997459649999999" green="0.2000150084" blue="0.1999689043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="touchPad" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="A5v-2D-FHQ" style="IBUITableViewCellStyleDefault" id="tK0-vH-dbB">
+                                        <rect key="frame" x="0.0" y="223" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tK0-vH-dbB" id="Zgr-ga-aJK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="TouchPad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A5v-2D-FHQ">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.19997459649999999" green="0.2000150084" blue="0.1999689043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -787,13 +805,33 @@
                     <view key="view" contentMode="scaleToFill" id="W2q-4X-dhO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ovd-p9-73V">
+                                <rect key="frame" x="16" y="36" width="343" height="551"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.24868899829999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Touch me, look at debug console"/>
+                                <connections>
+                                    <action selector="touchPadPosition:forEvent:" destination="WjX-YR-vAa" eventType="touchUpInside" id="NgP-cO-EHS"/>
+                                    <action selector="touchPadPosition:forEvent:" destination="WjX-YR-vAa" eventType="touchDown" id="h6y-kc-756"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.19997459649999999" green="0.2000150084" blue="0.1999689043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ovd-p9-73V" firstAttribute="leading" secondItem="Jdh-fn-vda" secondAttribute="leading" constant="16" id="3mG-04-OCS"/>
+                            <constraint firstItem="Ovd-p9-73V" firstAttribute="top" secondItem="Jdh-fn-vda" secondAttribute="top" constant="16" id="mHT-hU-Qhp"/>
+                            <constraint firstItem="Jdh-fn-vda" firstAttribute="trailing" secondItem="Ovd-p9-73V" secondAttribute="trailing" constant="16" id="o69-yI-0Qh"/>
+                            <constraint firstItem="Jdh-fn-vda" firstAttribute="bottom" secondItem="Ovd-p9-73V" secondAttribute="bottom" constant="16" id="vzT-kd-9Fl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Jdh-fn-vda"/>
                     </view>
+                    <connections>
+                        <outlet property="touchPadArea" destination="Ovd-p9-73V" id="all-lw-G2n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQH-zJ-Rab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="715"/>
+            <point key="canvasLocation" x="1008.8" y="714.69265367316348"/>
         </scene>
         <!--Layouts settings-->
         <scene sceneID="GfP-8I-b12">

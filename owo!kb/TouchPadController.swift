@@ -14,9 +14,23 @@ class TouchPadController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        touchPadArea.layer.cornerRadius = 12
     }
     
-
+    var buttonTimer:Timer!
+    
+    @IBOutlet weak var touchPadArea: UIButton!
+    @IBAction func touchPadPosition(_ sender: UIButton, forEvent event: UIEvent) {
+        if event.touches(for: sender)?.first?.phase == .began {
+            buttonTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (Timer) in print("x:", event.touches(for: sender)?.first?.location(in: sender).x.description as! String, "    y:", event.touches(for: sender)?.first?.location(in: sender).y.description as! String)})
+        }
+        
+        if event.touches(for: sender)?.first?.phase == .ended{
+            buttonTimer.invalidate()
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

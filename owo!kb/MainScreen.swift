@@ -28,6 +28,9 @@ class MainScreen: UIViewController {
             } else if UserDefaults.standard.string(forKey: "Layout") == "virtualKeyboard" {
                 print("Main screen is VirtualFullsizeKB")
                 self.RegularButtongsContainer?.isHidden = true; self.VirtualFullsizeKB?.isHidden = false; self.CustomScreen?.isHidden = true
+            } else if UserDefaults.standard.string(forKey: "Layout") == "touchPad" {
+                print("Main screen is VirtualFullsizeKB")
+                self.RegularButtongsContainer?.isHidden = true; self.VirtualFullsizeKB?.isHidden = true; self.CustomScreen?.isHidden = false
             }
         }
     }
