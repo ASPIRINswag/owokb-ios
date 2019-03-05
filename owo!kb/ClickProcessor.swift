@@ -18,33 +18,26 @@ public class ClickProcessor {
     
     let delegate = UIApplication.shared.delegate as! AppDelegate
     
-    public func keyDownToServer(_ keyName: String) {
+    public func BigButtonToServer(_ keyName: String, _ keyPhase: UITouch.Phase) {
         DispatchQueue.global(qos: .userInitiated).async {
             if UserDefaults.standard.integer(forKey: "NetProtocol") == 0 {
-                self.sentUDPpackage(keyName + "_down")
+                if keyPhase == .began {
+                    self.sentUDPpackage(keyName + "_down")
+                } else if keyPhase == .ended {
+                    self.sentUDPpackage(keyName + "_up")
+                }
             } else if UserDefaults.standard.integer(forKey: "NetProtocol") == 1 {
-                self.sentTCPpackage(keyName + "_down")
+                if keyPhase == .began {
+                    self.sentTCPpackage(keyName + "_down")
+                } else if keyPhase == .ended {
+                    self.sentTCPpackage(keyName + "_up")
+                }
             }
             DispatchQueue.main.async {
                 if UserDefaults.standard.bool(forKey: "Taptic") == true {
                     self.inputFeedback()
                 }
                 UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "PressedBigButtons") + 1, forKey: "PressedBigButtons")
-            }
-        }
-    }
-
-    public func keyUpToServer(_ keyName: String) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            if UserDefaults.standard.integer(forKey: "NetProtocol") == 0 {
-                self.sentUDPpackage(keyName + "_up")
-            } else if UserDefaults.standard.integer(forKey: "NetProtocol") == 1 {
-                self.sentTCPpackage(keyName + "_up")
-            }
-            DispatchQueue.main.async {
-                if UserDefaults.standard.bool(forKey: "Taptic") == true {
-                    self.inputFeedback()
-                }
             }
         }
     }

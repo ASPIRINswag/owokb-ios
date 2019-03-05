@@ -132,12 +132,8 @@ class ButtonControllerCell: UICollectionViewCell {
     
     @IBOutlet weak var button: UIButton!
     
-    @IBAction func keyDown(_ sender: UIButton) {
-        ClickProcessor().keyDownToServer(sender.currentTitle!)
-    }
-
-    @IBAction func keyUp(_ sender: UIButton) {
-        ClickProcessor().keyUpToServer(sender.currentTitle!)
+    @IBAction func bigButtonAction(_ sender: UIButton, forEvent event: UIEvent) {
+        ClickProcessor().BigButtonToServer(sender.currentTitle!, event.touches(for: sender)?.first?.phase as! UITouch.Phase)
     }
     
 }
