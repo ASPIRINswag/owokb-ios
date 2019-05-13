@@ -74,7 +74,7 @@
 		46D06FAD2198148D0035EFAA /* ClickProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickProcessor.swift; sourceTree = "<group>"; };
 		46D06FB3219814B00035EFAA /* KeyboardHideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHideManager.swift; sourceTree = "<group>"; };
 		46D06FBD219833C10035EFAA /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
-		D12FADCF2210235F00FADE87 /* TouchPadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchPadController.swift; sourceTree = "<group>"; };
+		D12FADCF2210235F00FADE87 /* TouchPadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchPadController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		D12FADD1221024EF00FADE87 /* VirtualKeyboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualKeyboardController.swift; sourceTree = "<group>"; };
 		D13740CF220F0EA3004AAFB9 /* ButtonsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsController.swift; sourceTree = "<group>"; };
 		D13AB15C2214938D008C33FC /* SettingsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLayout.swift; sourceTree = "<group>"; };

@@ -133,7 +133,7 @@ class ButtonControllerCell: UICollectionViewCell {
     @IBOutlet weak var button: UIButton!
     
     @IBAction func bigButtonAction(_ sender: UIButton, forEvent event: UIEvent) {
-        ClickProcessor().BigButtonToServer(sender.currentTitle!, event.touches(for: sender)?.first?.phase as! UITouch.Phase)
+        ClickProcessor().BigButtonToServer(sender.currentTitle!, event.touches(for: sender)!.first!.phase as UITouch.Phase)
     }
     
 }

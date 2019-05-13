@@ -322,6 +322,7 @@
                         <outlet property="CustomScreen" destination="Fbl-Fp-uva" id="3Tu-la-EbF"/>
                         <outlet property="RegularButtongsContainer" destination="8YM-a2-N7g" id="zUY-K6-i5t"/>
                         <outlet property="VirtualFullsizeKB" destination="Mgm-Qf-Ksy" id="pYD-HR-Uvq"/>
+                        <outlet property="owouiview" destination="E84-gG-yMr" id="Epv-rH-uFI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1p-2W-pmq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -802,32 +803,12 @@
         <scene sceneID="jaO-CT-IBZ">
             <objects>
                 <viewController storyboardIdentifier="TouchPad" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WjX-YR-vAa" customClass="TouchPadController" customModule="owo_kb" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="W2q-4X-dhO">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="W2q-4X-dhO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ovd-p9-73V">
-                                <rect key="frame" x="16" y="36" width="343" height="551"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.24868899829999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Touch me, look at debug console"/>
-                                <connections>
-                                    <action selector="touchPadPosition:forEvent:" destination="WjX-YR-vAa" eventType="touchUpInside" id="NgP-cO-EHS"/>
-                                    <action selector="touchPadPosition:forEvent:" destination="WjX-YR-vAa" eventType="touchDown" id="h6y-kc-756"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="0.19997459649999999" green="0.2000150084" blue="0.1999689043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Ovd-p9-73V" firstAttribute="leading" secondItem="Jdh-fn-vda" secondAttribute="leading" constant="16" id="3mG-04-OCS"/>
-                            <constraint firstItem="Ovd-p9-73V" firstAttribute="top" secondItem="Jdh-fn-vda" secondAttribute="top" constant="16" id="mHT-hU-Qhp"/>
-                            <constraint firstItem="Jdh-fn-vda" firstAttribute="trailing" secondItem="Ovd-p9-73V" secondAttribute="trailing" constant="16" id="o69-yI-0Qh"/>
-                            <constraint firstItem="Jdh-fn-vda" firstAttribute="bottom" secondItem="Ovd-p9-73V" secondAttribute="bottom" constant="16" id="vzT-kd-9Fl"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Jdh-fn-vda"/>
                     </view>
-                    <connections>
-                        <outlet property="touchPadArea" destination="Ovd-p9-73V" id="all-lw-G2n"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQH-zJ-Rab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
