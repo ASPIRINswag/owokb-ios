@@ -3,12 +3,11 @@ owo!kb - an open-source remote keyboard designed for rhythm games, but becomes s
 
 ## Uhh, what?
 Well, this is an application for send your clicks to your pc to play some simple games, or just use your device like remote keyboard/touchpad using Wi-fi.  
-~~[It requires server!](https://github.com/kitty433cute/osukb_rbld/)~~  No more support.  
+[It requires server!](https://discord.gg/7emswgB) You can find it in our discod server  
 
 ## Can i get some usefull links?
 Sure! 
 [Discord server](https://discord.gg/7emswgB)  
-~~[The Server for Windows!](https://github.com/kitty433cute/osukb_rbld/)~~  No more support.  
 [TODO list](https://github.com/ASPIRINswag/owokb-ios/blob/master/TODO.md) 
   
 Also you can contact with me via  
