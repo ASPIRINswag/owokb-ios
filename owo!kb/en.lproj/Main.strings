@@ -1,0 +1,194 @@
+//Startup screen
+
+/* Class = "UIViewController"; title = "Startup screen"; ObjectID = "9D1-Yv-mb7"; */
+"9D1-Yv-mb7.title" = "Startup screen";
+
+/* Class = "UILabel"; text = "owo!kb - owo wirless osu! Keyboard"; ObjectID = "etW-iW-dEg"; */
+"etW-iW-dEg.text" = "owo!kb - owo wirless osu! Keyboard";
+
+/* Class = "UITextField"; placeholder = "Enter your server IP"; ObjectID = "EPH-ff-qMo"; */
+"EPH-ff-qMo.placeholder" = "Enter your server IP";
+
+/* Class = "UIButton"; normalTitle = "Click circles"; ObjectID = "Pm1-oL-twI"; */
+"Pm1-oL-twI.normalTitle" = "Click circles";
+
+/* Class = "UILabel"; text = "Please donload the server from github"; ObjectID = "7s6-BY-yiV"; */
+"7s6-BY-yiV.text" = "Please donload the server from github";
+
+
+
+//Main screen
+
+/* Class = "UINavigationItem"; title = "owo!kb"; ObjectID = "Xfa-Ud-dyg"; */
+"Xfa-Ud-dyg.title" = "owo!kb";
+
+/* Class = "UIButton"; normalTitle = "ESC"; ObjectID = "cUL-th-mHZ"; */
+"cUL-th-mHZ.normalTitle" = "ESC";
+
+/* Class = "UIButton"; normalTitle = "Settings"; ObjectID = "2pw-XF-5JA"; */
+"2pw-XF-5JA.normalTitle" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "Settings"; ObjectID = "2pw-XF-5JA"; */
+"2pw-XF-5JA.normalTitle" = "Settings";
+
+
+
+//Tocuhpad
+
+/* Class = "UIButton"; normalTitle = "Touch me owo"; ObjectID = "iMH-xT-xPz"; */
+"iMH-xT-xPz.normalTitle" = "Touch me owo";
+
+/* Class = "UILabel"; text = "Coordinates X: 00.0 Y: 00.0"; ObjectID = "Sre-2q-KHK"; */
+"Sre-2q-KHK.text" = "Coordinates";
+
+
+
+//Settings main
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "Cav-UQ-Ixf"; */
+"Cav-UQ-Ixf.title" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "Close"; ObjectID = "PPH-lM-MmG"; */
+"PPH-lM-MmG.normalTitle" = "Close";
+
+/* Class = "UITableViewSection"; headerTitle = "Connection"; ObjectID = "Uih-Ih-8b6"; */
+"Uih-Ih-8b6.headerTitle" = "Connection";
+
+/* Class = "UILabel"; text = "Enter your server IP"; ObjectID = "3uf-pg-xLF"; */
+"3uf-pg-xLF.text" = "Enter your server IP";
+
+/* Class = "UILabel"; text = "Server port"; ObjectID = "5gn-9Y-5hJ"; */
+"5gn-9Y-5hJ.text" = "Server port";
+
+/* Class = "UITableViewSection"; footerTitle = "Also make sure that your 727 port is free"; ObjectID = "Uih-Ih-8b6"; */
+"Uih-Ih-8b6.footerTitle" = "Also make sure that your 727 port is free";
+
+/* Class = "UITableViewSection"; headerTitle = "Appearance and usability"; ObjectID = "vEA-cG-GMf"; */
+"vEA-cG-GMf.headerTitle" = "Appearance and usability";
+
+/* Class = "UILabel"; text = "Layout"; ObjectID = "hJ8-Ga-JAm"; */
+"hJ8-Ga-JAm.text" = "Layout";
+
+/* Class = "UILabel"; text = "Use Taptic Engine"; ObjectID = "7dz-1d-EdQ"; */
+"7dz-1d-EdQ.text" = "Use Taptic Engine";
+
+/* Class = "UITableViewSection"; headerTitle = "Others"; ObjectID = "Ysr-YP-MwG"; */
+"Ysr-YP-MwG.headerTitle" = "Others";
+
+/* Class = "UILabel"; text = "Open GitHub page"; ObjectID = "gde-HA-vgR"; */
+"gde-HA-vgR.text" = "Open GitHub page";
+
+/* Class = "UILabel"; text = "Statistics"; ObjectID = "igI-Iq-FDr"; */
+"igI-Iq-FDr.text" = "Statistics";
+
+/* Class = "UITableViewSection"; footerTitle = "Me is footer"; ObjectID = "Ysr-YP-MwG"; */
+"Ysr-YP-MwG.footerTitle" = "Me is footer";
+
+
+
+//Layout settings
+
+/* Class = "UITableViewController"; title = "Layouts"; ObjectID = "4jE-Md-yIt"; */
+"4jE-Md-yIt.title" = "Layouts";
+
+/* Class = "UILabel"; text = "Layout settings"; ObjectID = "7D9-Zc-fG8"; */
+"7D9-Zc-fG8.text" = "Layout settings";
+
+/* Class = "UITableViewSection"; headerTitle = "Default layouts"; ObjectID = "eUe-96-lvZ"; */
+"eUe-96-lvZ.headerTitle" = "Default layouts";
+
+/* Class = "UILabel"; text = "Big buttons"; ObjectID = "igj-Tv-G3e"; */
+"igj-Tv-G3e.text" = "Big buttons";
+
+/* Class = "UILabel"; text = "TouchPad"; ObjectID = "A5v-2D-FHQ"; */
+"A5v-2D-FHQ.text" = "TouchPad";
+
+/* Class = "UITableViewController"; title = "Layouts settings"; ObjectID = "NBu-nX-Wy0"; */
+"NBu-nX-Wy0.title" = "Layouts settings";
+
+/* Class = "UITableViewSection"; headerTitle = "Main sceen"; ObjectID = "bTU-wv-wR7"; */
+"bTU-wv-wR7.headerTitle" = "Main sceen";
+
+/* Class = "UILabel"; text = "Num of buttons"; ObjectID = "3uJ-gD-x2d"; */
+"3uJ-gD-x2d.text" = "Num of buttons";
+
+/* Class = "UITableViewSection"; headerTitle = "Buttons renaming"; ObjectID = "vBt-N4-Ij0"; */
+"vBt-N4-Ij0.headerTitle" = "Buttons renaming";
+
+/* Class = "UILabel"; text = "Button 1"; ObjectID = "lIr-ce-taa"; */
+"lIr-ce-taa.text" = "Button 1";
+
+/* Class = "UILabel"; text = "Button 2"; ObjectID = "4H6-E0-JjS"; */
+"4H6-E0-JjS.text" = "Button 2";
+
+/* Class = "UILabel"; text = "Button 3"; ObjectID = "fbx-mq-Y7z"; */
+"fbx-mq-Y7z.text" = "Button 3";
+
+/* Class = "UILabel"; text = "Button 4"; ObjectID = "t7D-mQ-46V"; */
+"t7D-mQ-46V.text" = "Button 4";
+
+/* Class = "UILabel"; text = "Button 5"; ObjectID = "mUD-nV-Sqq"; */
+"mUD-nV-Sqq.text" = "Button 5";
+
+/* Class = "UILabel"; text = "Button 6"; ObjectID = "gQl-BA-3vi"; */
+"gQl-BA-3vi.text" = "Button 6";
+
+/* Class = "UILabel"; text = "Button 7"; ObjectID = "7nT-ER-nHJ"; */
+"7nT-ER-nHJ.text" = "Button 7";
+
+/* Class = "UILabel"; text = "Button 8"; ObjectID = "Ufm-vh-44g"; */
+"Ufm-vh-44g.text" = "Button 8";
+
+/* Class = "UILabel"; text = "Button 9"; ObjectID = "dDf-ru-IiU"; */
+"dDf-ru-IiU.text" = "Button 9";
+
+
+
+//Statistics
+
+/* Class = "UITableViewController"; title = "Statistics"; ObjectID = "koW-Si-PUw"; */
+"koW-Si-PUw.title" = "Statistics";
+
+/* Class = "UITableViewSection"; headerTitle = "Buttons pressed"; ObjectID = "tfu-AT-a3l"; */
+"tfu-AT-a3l.headerTitle" = "Buttons pressed";
+
+/* Class = "UILabel"; text = "Big buttons"; ObjectID = "xuV-hB-Qdz"; */
+"xuV-hB-Qdz.text" = "Big buttons";
+
+/* Class = "UITableViewSection"; headerTitle = "Packages sent"; ObjectID = "juG-fi-D0h"; */
+"juG-fi-D0h.headerTitle" = "Packages sent";
+
+/* Class = "UILabel"; text = "UDP"; ObjectID = "fH3-TH-YVf"; */
+"fH3-TH-YVf.text" = "UDP";
+
+/* Class = "UITableViewSection"; headerTitle = "Reset statistics"; ObjectID = "ceB-1H-vYS"; */
+"ceB-1H-vYS.headerTitle" = "Reset statistics";
+
+/* Class = "UILabel"; text = "Reset statistics"; ObjectID = "7or-td-6Pv"; */
+"7or-td-6Pv.text" = "Reset statistics";
+
+/* Class = "UILabel"; text = "Reset all settings"; ObjectID = "deW-sV-AVL"; */
+"deW-sV-AVL.text" = "Reset all settings";
+
+
+
+//others
+
+/* Class = "UINavigationController"; title = "Navigation Controller"; ObjectID = "VF8-gv-6bF"; */
+"VF8-gv-6bF.title" = "Navigation Controller";
+
+/* Class = "UINavigationController"; title = "Navigation Controller"; ObjectID = "gll-8l-YyC"; */
+"gll-8l-YyC.title" = "Navigation Controller";
+
+/* Class = "UIViewController"; title = "owo!kb"; ObjectID = "YlM-A9-H0j"; */
+"YlM-A9-H0j.title" = "owo!kb";
+
+/* Class = "UITableViewController"; title = "Settings"; ObjectID = "C2E-Pd-Sn9"; */
+"C2E-Pd-Sn9.title" = "Settings";
+
+/* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "dfG-uy-enW"; */
+"dfG-uy-enW.title" = "Settings";
+
+
+
+//unsorted
