@@ -10,74 +10,34 @@ import UIKit
 
 class TouchPadController: UIViewController {
 
+    var buttonTimer:Timer!
+    @IBOutlet var touchPadDebugInfo: UILabel!
+    @IBOutlet weak var touchPadArea: UIButton!
+    @IBAction func touchPadPosition(_ sender: UIButton, forEvent event: UIEvent) {
+        if event.touches(for: sender)?.first?.phase == .began {
+            if #available(iOS 10.0, *) {
+                buttonTimer = Timer.scheduledTimer(withTimeInterval: 0.017, repeats: true, block:{ (Timer) in self.getPos((event.touches(for: sender)?.first)!)})
+            } else {
+                // Fallback on earlier versions
+                //oops
+            }
+        } //0.017
+
+        if event.touches(for: sender)?.first?.phase == .ended{
+            buttonTimer.invalidate()
+        }
+    }
+
+    func getPos (_ touch: UITouch){
+        touchPadDebugInfo.text = "X: \(touch.location(in: self.view).x) Y: \(touch.location(in: self.view).y)"
+        print("x:", Double(touch.location(in: self.view).x), "    y:", Double(touch.location(in: self.view).y), "    raw:", touch.location(in: self.view))
+        ClickProcessor().touchPadPosotionToServer(touch.location(in: self.view))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-
-//        let tap = UILongPressGestureRecognizer(target: self, action: #selector(tapHandler))
-//        tap.minimumPressDuration = 0
-//        view.addGestureRecognizer(tap)
+        touchPadArea.layer.cornerRadius = 12
+        NotificationCenter.default.addObserver(self, selector: #selector(viewWillAppear), name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
-//    @IBOutlet weak var touchPadArea: UIButton!
-//    @IBAction func touchPadPosition(_ sender: UIButton, forEvent event: UIEvent) {
-//        if event.touches(for: sender)?.first?.phase == .began {
-//            buttonTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: { (Timer) in self.getPos(event.touches(for: sender)!.first!.location(in: sender), event, sender)}) //0.017
-//        }
-//
-//        if event.touches(for: sender)?.first?.phase == .ended{
-//            buttonTimer.invalidate()
-//        }
-//    }
-    
-
-// called by gesture recognizer
-//    @objc func tapHandler(gesture: UITapGestureRecognizer) {
-//        if gesture.state == .began {
-//            buttonTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: { (Timer) in self.getPos2(gesture)})
-//        } else if gesture.state == .ended { // optional for touch up event catching
-//            buttonTimer.invalidate()
-//        }
-//    }
-//
-//    func getPos2 (_ sender: UITapGestureRecognizer){
-////        for i in 0...(sender.numberOfTouches - 1) {
-////            print(sender.location(ofTouch: i, in: self.MainView))
-////        }
-//
-//        print(sender.numberOfTouches)
-//
-//    }
-    
-    var buttonTimer:Timer!
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print(touches.endIndex)
-        for touch in touches {
-            getPos(touch, with: event)
-            //buttonTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: { (Timer) in self.getPos(touch, with: event)}) //0.017
-        }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            getPos(touch, with: event)
-        }
-    }
-    
-    func getPos (_ touch: UITouch, with event: UIEvent?){
-        print("x:", Double(touch.location(in: self.view).x), "    y:", Double(touch.location(in: self.view).y), touch.location(in: self.view))
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
