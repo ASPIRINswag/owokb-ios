@@ -12,18 +12,32 @@ import Socket
 
 class SettingsScreen: UITableViewController, UITextFieldDelegate {
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if self.restorationIdentifier == "mainSettingsScreen" {
+            IPAddressField.text = UserDefaults.standard.string(forKey: "ServerIp")
+            TapticSwitch.isOn = UserDefaults.standard.bool(forKey: "Taptic")
+            PortAddressField.text = UserDefaults.standard.string(forKey: "ServerPort")
+            CloseSettingsButton.layer.cornerRadius = 12
+        }
+        IPAddressField.delegate = self
+        PortAddressField.delegate = self
+    }
+    
+    @IBOutlet weak var CloseSettingsButton: UIButton!
+    @IBAction func CloseSettingsAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     static func CreateConnection() {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.socketUDP.close()
-        delegate.socketTCP.close()
         print("Creating new connection. Connection closed")
-        
+
         do {
-            if UserDefaults.standard.integer(forKey: "ConnectionType") == 0 {
-                delegate.socketUDP = try Socket.create(family: .inet, type: .datagram, proto: .udp)
-            } else if UserDefaults.standard.integer(forKey: "ConnectionType") == 1 {
-                delegate.socketTCP = try Socket.create(connectedUsing: Socket.Signature(protocolFamily: .inet, socketType: .stream, proto: .tcp, hostname: UserDefaults.standard.string(forKey: "ServerIp"), port: Int32(UserDefaults.standard.integer(forKey: "ServerPort")))!)
-            }
+            delegate.socketUDP = try Socket.create(family: .inet, type: .datagram, proto: .udp)
         } catch let error {
             guard let socketError = error as? Socket.Error else {
                 print("Unexpected error...")
@@ -38,46 +52,35 @@ class SettingsScreen: UITableViewController, UITextFieldDelegate {
     @IBAction func IpWasChanged(_ sender: Any) {
         UserDefaults.standard.set(IPAddressField.text, forKey: "ServerIp")
         SettingsScreen.CreateConnection()
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        do {
-            try delegate.socketTCP.write(from: ("owo, you are: " + UserDefaults.standard.string(forKey: "ServerIp")! + ":" + String(UserDefaults.standard.integer(forKey: "ServerPort"))).data(using: .utf8)!)
-        } catch let error {
-            guard let socketError = error as? Socket.Error else {
-                print("Unexpected error...")
-                return
-            }
-            print("Error reported: \(socketError.description)")
-        }
     }
-    
+
     @IBOutlet weak var PortAddressField: UITextField!
     @IBAction func PortWasChanged(_ sender: Any) {
         UserDefaults.standard.set(PortAddressField.text, forKey: "ServerPort")
         SettingsScreen.CreateConnection()
     }
-    
-    @IBOutlet weak var NetProtocol: UISegmentedControl!
-    @IBAction func ChangeProtocol(_ sender: Any) {
-        UserDefaults.standard.set(NetProtocol.selectedSegmentIndex, forKey: "NetProtocol")
-    }
-    
+
     @IBOutlet weak var TapticSwitch: UISwitch!
     @IBAction func TapticSwitchAction(_ sender: Any) {
         UserDefaults.standard.set(TapticSwitch.isOn, forKey: "Taptic")
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if self.restorationIdentifier == "mainSettingsScreen" {
             tableView.deselectRow(at: indexPath, animated: true)
             if indexPath.section == 2 {
                 if indexPath.row == 0 {
-                    guard let url = URL(string: "https://github.com/kitty433cute/osukb_rbld/releases") else { return }
-                    UIApplication.shared.open(url)
+                    guard let url = URL(string: "https://github.com/ASPIRINswag/owokb-ios") else { return }
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(url)
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
                 }
             }
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 2 {
             if self.restorationIdentifier == "mainSettingsScreen" {
@@ -89,40 +92,14 @@ class SettingsScreen: UITableViewController, UITextFieldDelegate {
             return ""
         }
     }
-        
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if self.restorationIdentifier == "mainSettingsScreen" {
-            IPAddressField.text = UserDefaults.standard.string(forKey: "ServerIp")
-            TapticSwitch.isOn = UserDefaults.standard.bool(forKey: "Taptic")
-        } else if self.restorationIdentifier == "experimentalSettingsScreen" {
-            PortAddressField.text = UserDefaults.standard.string(forKey: "ServerPort")
-            NetProtocol.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "NetProtocol")
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        if self.restorationIdentifier == "mainSettingsScreen" {
-            super.viewWillDisappear(animated)
-            if self.isMovingFromParent {
-                VirtualKeyboardController().view.setNeedsLayout()
-                VirtualKeyboardController().view.layoutIfNeeded()
-            }
-        }
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    //some stuff
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
+        textField.resignFirstResponder()
+        return true;
     }
-    
-    
-    
 }

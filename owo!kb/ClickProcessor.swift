@@ -20,18 +20,10 @@ public class ClickProcessor {
     
     public func BigButtonToServer(_ keyName: String, _ keyPhase: UITouch.Phase) {
         DispatchQueue.global(qos: .userInitiated).async {
-            if UserDefaults.standard.integer(forKey: "NetProtocol") == 0 {
-                if keyPhase == .began {
-                    self.sentUDPpackage(keyName + "_down")
-                } else if keyPhase == .ended {
-                    self.sentUDPpackage(keyName + "_up")
-                }
-            } else if UserDefaults.standard.integer(forKey: "NetProtocol") == 1 {
-                if keyPhase == .began {
-                    self.sentTCPpackage(keyName + "_down")
-                } else if keyPhase == .ended {
-                    self.sentTCPpackage(keyName + "_up")
-                }
+            if keyPhase == .began {
+                self.sentUDPpackage(keyName + "_down")
+            } else if keyPhase == .ended {
+                self.sentUDPpackage(keyName + "_up")
             }
             DispatchQueue.main.async {
                 if UserDefaults.standard.bool(forKey: "Taptic") == true {
@@ -42,19 +34,14 @@ public class ClickProcessor {
         }
     }
     
-    public func keyPressedToServer(_ keyName: String) {
+    public func touchPadPosotionToServer(_ keyName: CGPoint) {
         DispatchQueue.global(qos: .userInitiated).async {
-            if UserDefaults.standard.integer(forKey: "NetProtocol") == 0 {
-                self.sentUDPpackage(keyName + "_pressed")
-            } else if UserDefaults.standard.integer(forKey: "NetProtocol") == 1 {
-                self.sentTCPpackage(keyName + "_pressed")
-            }
+            self.sentUDPpackage(keyName.x.description + ":" + keyName.y.description + "_pos")
             DispatchQueue.main.async {
-                UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "iOSKb") + 1, forKey: "iOSKb")
+                //UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "PressedBigButtons") + 1, forKey: "PressedBigButtons")
             }
         }
     }
-    
     
     internal func sentUDPpackage(_ package: String) {
         do{
@@ -70,30 +57,18 @@ public class ClickProcessor {
         print("UDP:", package)
     }
     
-    internal func sentTCPpackage(_ package: String){
-        do{
-            delegate.socketTCP = try Socket.create(connectedUsing: Socket.Signature(protocolFamily: .inet, socketType: .stream, proto: .tcp, hostname: UserDefaults.standard.string(forKey: "ServerIp"), port: Int32(UserDefaults.standard.string(forKey: "ServerPort")!))!)
-            try delegate.socketTCP.write(from: (package).data(using: .utf8)!)
-        } catch let error {
-            guard let socketError = error as? Socket.Error else {
-                print("Unexpected error...")
-                return
-            }
-            print("Error reported: \(socketError.description)")
-        }
-        UserDefaults.standard.set(UserDefaults.standard.integer(forKey: "sentTCP") + 1, forKey: "sentTCP")
-        print("TCP:", package)
-    }
-    
     internal func inputFeedback(){
         //6s
-        AudioServicesPlaySystemSound(1520)
+        AudioServicesPlaySystemSound(1519)
         
         //7 and newer
-        UIImpactFeedbackGenerator(style: .medium).prepare()
-        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+        if #available(iOS 10.0, *) {
+            UIImpactFeedbackGenerator(style: .medium).prepare()
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+        } else {
+            // Fallback on earlier versions
+        }
     }
-    
 }
 
 	

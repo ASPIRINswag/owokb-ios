@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,11 +18,9 @@
 		46D06FB4219814B00035EFAA /* KeyboardHideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D06FB3219814B00035EFAA /* KeyboardHideManager.swift */; };
 		46D06FBE219833C10035EFAA /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D06FBD219833C10035EFAA /* SettingsScreen.swift */; };
 		D12FADD02210235F00FADE87 /* TouchPadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12FADCF2210235F00FADE87 /* TouchPadController.swift */; };
-		D12FADD2221024EF00FADE87 /* VirtualKeyboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12FADD1221024EF00FADE87 /* VirtualKeyboardController.swift */; };
 		D13740D0220F0EA3004AAFB9 /* ButtonsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13740CF220F0EA3004AAFB9 /* ButtonsController.swift */; };
 		D13AB15D2214938D008C33FC /* SettingsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13AB15C2214938D008C33FC /* SettingsLayout.swift */; };
-		D16807EB2211CF4500F0B5A6 /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D16807EA2211CF4500F0B5A6 /* Socket.framework */; };
-		D16807EC2211CF4500F0B5A6 /* Socket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D16807EA2211CF4500F0B5A6 /* Socket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D179C63122AD432F000B0D0E /* Socket in Frameworks */ = {isa = PBXBuildFile; productRef = D179C63022AD432F000B0D0E /* Socket */; };
 		D1FC0B1122181B0100A72C88 /* StatisticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC0B1022181B0100A72C88 /* StatisticsController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,20 +41,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		D16807E92211CED400F0B5A6 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				D16807EC2211CF4500F0B5A6 /* Socket.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		46D06F7A219813970035EFAA /* owo!kb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "owo!kb.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46D06F7D219813970035EFAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,10 +59,10 @@
 		46D06FB3219814B00035EFAA /* KeyboardHideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHideManager.swift; sourceTree = "<group>"; };
 		46D06FBD219833C10035EFAA /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		D12FADCF2210235F00FADE87 /* TouchPadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchPadController.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		D12FADD1221024EF00FADE87 /* VirtualKeyboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualKeyboardController.swift; sourceTree = "<group>"; };
 		D13740CF220F0EA3004AAFB9 /* ButtonsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsController.swift; sourceTree = "<group>"; };
 		D13AB15C2214938D008C33FC /* SettingsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLayout.swift; sourceTree = "<group>"; };
-		D16807EA2211CF4500F0B5A6 /* Socket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Socket.framework; path = Carthage/Build/iOS/Socket.framework; sourceTree = "<group>"; };
+		D189EFE922B16D8F00AB9BE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		D189EFEA22B16DBF00AB9BE8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		D1FC0B1022181B0100A72C88 /* StatisticsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D16807EB2211CF4500F0B5A6 /* Socket.framework in Frameworks */,
+				D179C63122AD432F000B0D0E /* Socket in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +99,6 @@
 				46D06F91219813990035EFAA /* owo!kbTests */,
 				46D06F9C219813990035EFAA /* owo!kbUITests */,
 				46D06F7B219813970035EFAA /* Products */,
-				D135E46121F7823F00BE45AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,18 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				D13740CF220F0EA3004AAFB9 /* ButtonsController.swift */,
-				D12FADD1221024EF00FADE87 /* VirtualKeyboardController.swift */,
 				D12FADCF2210235F00FADE87 /* TouchPadController.swift */,
 			);
 			name = Screens;
-			sourceTree = "<group>";
-		};
-		D135E46121F7823F00BE45AE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D16807EA2211CF4500F0B5A6 /* Socket.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D13AB15B22149306008C33FC /* Settings */ = {
@@ -202,13 +176,15 @@
 				46D06F76219813970035EFAA /* Sources */,
 				46D06F77219813970035EFAA /* Frameworks */,
 				46D06F78219813970035EFAA /* Resources */,
-				D16807E92211CED400F0B5A6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "owo!kb";
+			packageProductDependencies = (
+				D179C63022AD432F000B0D0E /* Socket */,
+			);
 			productName = "owo!kb";
 			productReference = 46D06F7A219813970035EFAA /* owo!kb.app */;
 			productType = "com.apple.product-type.application";
@@ -284,8 +260,12 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 46D06F71219813970035EFAA;
+			packageReferences = (
+				D179C62F22AD432F000B0D0E /* XCRemoteSwiftPackageReference "BlueSocket" */,
+			);
 			productRefGroup = 46D06F7B219813970035EFAA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -337,7 +317,6 @@
 				46D06FAC219814880035EFAA /* MainScreen.swift in Sources */,
 				46D06F7E219813970035EFAA /* AppDelegate.swift in Sources */,
 				46D06FB4219814B00035EFAA /* KeyboardHideManager.swift in Sources */,
-				D12FADD2221024EF00FADE87 /* VirtualKeyboardController.swift in Sources */,
 				46D06FAE2198148D0035EFAA /* ClickProcessor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +357,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				46D06F82219813970035EFAA /* Base */,
+				D189EFE922B16D8F00AB9BE8 /* en */,
+				D189EFEA22B16DBF00AB9BE8 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -397,6 +378,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -444,13 +426,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -458,6 +441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -499,12 +483,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -513,7 +498,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "owo!kb/owo!kb.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 58;
 				DEVELOPMENT_TEAM = P3RKM69GK3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -521,14 +508,16 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "owo!kb/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "aspirinlab.owo-kb";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SUPPORTS_UIKITFORMAC = NO;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -537,7 +526,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "owo!kb/owo!kb.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 58;
 				DEVELOPMENT_TEAM = P3RKM69GK3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -545,14 +536,16 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "owo!kb/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "aspirinlab.owo-kb";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SUPPORTS_UIKITFORMAC = NO;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -679,6 +672,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D179C62F22AD432F000B0D0E /* XCRemoteSwiftPackageReference "BlueSocket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IBM-Swift/BlueSocket.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.46;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D179C63022AD432F000B0D0E /* Socket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D179C62F22AD432F000B0D0E /* XCRemoteSwiftPackageReference "BlueSocket" */;
+			productName = Socket;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 46D06F72219813970035EFAA /* Project object */;
 }

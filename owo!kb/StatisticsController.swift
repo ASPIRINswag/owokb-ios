@@ -22,14 +22,48 @@ class StatisticsController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 2 {
             if indexPath.row == 0 {
-                let alert = UIAlertController(title: "Do you want to reset?", message: "Warning! This action will erase all your statistics without any able to bring it back!", preferredStyle: .actionSheet)
+                let alert = UIAlertController(title: "Do you want to reset statistics?", message: "Warning! This action will erase all your statistics without any able to bring it back!", preferredStyle: .actionSheet)
                 alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
                     print("deliting statistics")
                     UserDefaults.standard.set(0, forKey: "PressedBigButtons")
-                    UserDefaults.standard.set(0, forKey: "iOSKb")
                     UserDefaults.standard.set(0, forKey: "sentUDP")
-                    UserDefaults.standard.set(0, forKey: "sentTCP")
                     UIView.transition(with: self.Table, duration: 0.8, options: .transitionFlipFromRight, animations: {self.viewDidLoad()}, completion: nil)
+                }))
+                alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+                
+                if let popoverPresentationController = alert.popoverPresentationController {
+                    popoverPresentationController.sourceView = self.tableView.cellForRow(at: indexPath)
+                    popoverPresentationController.sourceRect = tableView.cellForRow(at: indexPath)!.bounds
+                }
+                self.present(alert, animated: true, completion: nil)
+            }
+            if indexPath.row == 1 {
+                let alert = UIAlertController(title: "Do you want to reset everyting?", message: "Warning! This action will erase all your statistics and all settings without any able to bring it back!", preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                    print("deliting statistics")
+                    
+                    UserDefaults.standard.set(true, forKey: "FirstStart")
+                    UserDefaults.standard.set("192.168.0.1", forKey: "ServerIp")
+                    UserDefaults.standard.set("727", forKey: "ServerPort")
+                    UserDefaults.standard.set("0", forKey: "NetProtocol")
+                    UserDefaults.standard.set("defaultKeys", forKey: "Layout")
+                    UserDefaults.standard.set(2, forKey: "ButtonsCount")
+                    
+                    UserDefaults.standard.set(false, forKey: "Taptic")
+                    
+                    UserDefaults.standard.set("Z", forKey: "ButtonKey1")
+                    UserDefaults.standard.set("X", forKey: "ButtonKey2")
+                    UserDefaults.standard.set("D", forKey: "ButtonKey3")
+                    UserDefaults.standard.set("F", forKey: "ButtonKey4")
+                    UserDefaults.standard.set("G", forKey: "ButtonKey5")
+                    UserDefaults.standard.set("H", forKey: "ButtonKey6")
+                    UserDefaults.standard.set("J", forKey: "ButtonKey7")
+                    UserDefaults.standard.set("K", forKey: "ButtonKey8")
+                    UserDefaults.standard.set("L", forKey: "ButtonKey9")
+                    
+                    UserDefaults.standard.set(0, forKey: "PressedBigButtons")
+                    UserDefaults.standard.set(0, forKey: "sentUDP")
+                    exit(0);
                 }))
                 alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
                 
@@ -45,9 +79,7 @@ class StatisticsController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         BigButtonsNum.text = String(UserDefaults.standard.integer(forKey: "PressedBigButtons"))
-        iOSkbNum.text = String(UserDefaults.standard.integer(forKey: "iOSKb"))
         sentUDPnum.text = String(UserDefaults.standard.integer(forKey: "sentUDP"))
-        sentTCPnum.text = String(UserDefaults.standard.integer(forKey: "sentTCP"))
         // Do any additional setup after loading the view.
     }
 

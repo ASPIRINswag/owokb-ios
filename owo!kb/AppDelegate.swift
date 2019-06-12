@@ -14,13 +14,12 @@ import Socket
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+
     var socketUDP = try! Socket.create(family: .inet, type: .datagram, proto: .udp)
-    var socketTCP = try! Socket.create(family: .inet, type: .stream, proto: .tcp)
     func StartSerter() {
         do {
             socketUDP = try Socket.create(family: .inet, type: .datagram, proto: .udp)
-            
+
         } catch let error {
             guard let socketError = error as? Socket.Error else {
                 print("Unexpected error...")
@@ -57,9 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //statistics
         UserDefaults.standard.register(defaults: ["PressedBigButtons" : 0])
-        UserDefaults.standard.register(defaults: ["iOSKb" : 0])
         UserDefaults.standard.register(defaults: ["sentUDP" : 0])
-        UserDefaults.standard.register(defaults: ["sentTCP" : 0])
         
         StartSerter()
         
@@ -68,7 +65,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillResignActive(_ application: UIApplication) {
         socketUDP.close()
-        socketTCP.close()
         print("App will become inactive. Connection closed")
     }
     
@@ -87,7 +83,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(_ application: UIApplication) {
         socketUDP.close()
-        socketTCP.close()
         print("rip app")
         
     }

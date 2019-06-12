@@ -11,6 +11,8 @@ import UIKit
 
 class SettingsLayout: UITableViewController, UITextFieldDelegate {
     
+    var dismissHandler: (() -> Void)!
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if self.restorationIdentifier == "layoutListingScreen" {
@@ -22,6 +24,7 @@ class SettingsLayout: UITableViewController, UITextFieldDelegate {
                     cell.accessoryType = .checkmark
                     UserDefaults.standard.set(cell.restorationIdentifier!, forKey: "Layout")
                     print("layout changed to:", cell.restorationIdentifier!)
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
                 }
             }
         }
@@ -40,18 +43,24 @@ class SettingsLayout: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet weak var LayoutButtonsNum: UITextField!
     @IBAction func LayoutButtonsNumAction(_ sender: Any) {
-        if Int(LayoutButtonsNum.text!)! > 9 {
+        let digits: String = LayoutButtonsNum.text!.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        if digits.isEmpty {
+            LayoutButtonsNum.text = ""
+            return
+        } else if Int(digits)! > 9 {
             LayoutButtonsNum.text = "9"
-        } else if Int(LayoutButtonsNum.text!)! < 1 {
+        } else if Int(digits)! < 1 {
             LayoutButtonsNum.text = "1"
         }
         UserDefaults.standard.set(LayoutButtonsNum.text, forKey: "ButtonsCount")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
     @IBOutlet weak var ButtonKey1: UITextField!
     @IBAction func ButtonKey1Action(_ sender: Any) {
         if ButtonKey1.text != "" {
             UserDefaults.standard.set(String(ButtonKey1.text!.first!).uppercased(), forKey: "ButtonKey1")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         }
     }
     
@@ -59,6 +68,7 @@ class SettingsLayout: UITableViewController, UITextFieldDelegate {
     @IBAction func ButtonKey2Action(_ sender: Any) {
         if ButtonKey2.text != "" {
             UserDefaults.standard.set(String(ButtonKey2.text!.first!).uppercased(), forKey: "ButtonKey2")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         }
     }
     
@@ -66,6 +76,7 @@ class SettingsLayout: UITableViewController, UITextFieldDelegate {
     @IBAction func ButtonKey3Action(_ sender: Any) {
         if ButtonKey3.text != "" {
             UserDefaults.standard.set(String(ButtonKey3.text!.first!).uppercased(), forKey: "ButtonKey3")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         }
     }
     
@@ -73,6 +84,7 @@ class SettingsLayout: UITableViewController, UITextFieldDelegate {
     @IBAction func ButtonKey4Action(_ sender: Any) {
         if ButtonKey4.text != "" {
             UserDefaults.standard.set(String(ButtonKey4.text!.first!).uppercased(), forKey: "ButtonKey4")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         }
     }
     
@@ -80,6 +92,7 @@ class SettingsLayout: UITableViewController, UITextFieldDelegate {
     @IBAction func ButtonKey5Action(_ sender: Any) {
         if ButtonKey5.text != "" {
             UserDefaults.standard.set(String(ButtonKey5.text!.first!).uppercased(), forKey: "ButtonKey5")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         }
     }
     
@@ -87,6 +100,7 @@ class SettingsLayout: UITableViewController, UITextFieldDelegate {
     @IBAction func ButtonKey6Action(_ sender: Any) {
         if ButtonKey6.text != "" {
             UserDefaults.standard.set(String(ButtonKey6.text!.first!).uppercased(), forKey: "ButtonKey6")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         }
     }
     
@@ -94,6 +108,7 @@ class SettingsLayout: UITableViewController, UITextFieldDelegate {
     @IBAction func ButtonKey7Action(_ sender: Any) {
         if ButtonKey7.text != "" {
             UserDefaults.standard.set(String(ButtonKey7.text!.first!).uppercased(), forKey: "ButtonKey7")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         }
     }
     
@@ -101,6 +116,7 @@ class SettingsLayout: UITableViewController, UITextFieldDelegate {
     @IBAction func ButtonKey8Action(_ sender: Any) {
         if ButtonKey8.text != "" {
             UserDefaults.standard.set(String(ButtonKey8.text!.first!).uppercased(), forKey: "ButtonKey8")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         }
     }
     
@@ -108,6 +124,7 @@ class SettingsLayout: UITableViewController, UITextFieldDelegate {
     @IBAction func ButtonKey9Action(_ sender: Any) {
         if ButtonKey9.text != "" {
             UserDefaults.standard.set(String(ButtonKey9.text!.first!).uppercased(), forKey: "ButtonKey9")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         }
     }
     
@@ -124,6 +141,17 @@ class SettingsLayout: UITableViewController, UITextFieldDelegate {
             ButtonKey7.text = UserDefaults.standard.string(forKey: "ButtonKey7")
             ButtonKey8.text = UserDefaults.standard.string(forKey: "ButtonKey8")
             ButtonKey9.text = UserDefaults.standard.string(forKey: "ButtonKey9")
+            
+            LayoutButtonsNum.delegate = self
+            ButtonKey1.delegate = self
+            ButtonKey2.delegate = self
+            ButtonKey3.delegate = self
+            ButtonKey4.delegate = self
+            ButtonKey5.delegate = self
+            ButtonKey6.delegate = self
+            ButtonKey7.delegate = self
+            ButtonKey8.delegate = self
+            ButtonKey9.delegate = self
         }
     }
 
@@ -131,4 +159,10 @@ class SettingsLayout: UITableViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
+    
 }
