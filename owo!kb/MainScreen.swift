@@ -8,73 +8,83 @@
 
 import Foundation
 import UIKit
-import Socket
 
 class MainScreen: UIViewController {
     
+    
     @IBOutlet var owouiview: UIView!
     @IBOutlet var RegularButtongsContainer: UIView?
-    @IBOutlet var VirtualFullsizeKB: UIView?
     @IBOutlet var CustomScreen: UIView?
+    
+    @IBOutlet weak var SettingsButton: UIButton!
+    @IBOutlet weak var ESCButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(reload), name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
-//    @IBOutlet weak var GoToSettings: UIButton!
-//    @IBAction func GoToSettingsAction(_ sender: Any) {
-//        switch UIDevice.current.userInterfaceIdiom {
-//        case .phone:
-//            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "mainSettingsScreen") as! SettingsScreen
-//            self.navigationController?.pushViewController(nextViewController, animated: true)
-//        case .pad:
-//            if self.SettingsScreenContainer.isHidden == true {
-//                self.SettingsConstraint.constant = self.view.frame.width * 0.7
-//                self.ButtonsConstraint.constant = self.view.frame.width * 0.3
-//                self.SettingsScreenContainer.isHidden = false
-//                GoToSettings.setTitle("Close settings", for: .normal)
-//                UIView.animate(withDuration: 0.3) {
-//                    self.view.layoutIfNeeded()
-//                }
-//            } else if self.SettingsScreenContainer.isHidden == false {
-//                self.SettingsConstraint.constant = self.view.frame.width
-//                self.ButtonsConstraint.constant = self.view.frame.width
-//                self.SettingsScreenContainer.isHidden = true
-//                GoToSettings.setTitle("Settings", for: .normal)
-//                UIView.animate(withDuration: 0.3) {
-//                    self.view.layoutIfNeeded()
-//                }
-//            }
-//        default:
-//            print("what")
-//        }
-//
-//    }
+    @IBOutlet weak var SettingsBarButton: UIBarButtonItem!
+    @IBAction func GoToSettingsAction(_ sender: Any) {
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextViewController = storyboard.instantiateViewController(withIdentifier: "mainSettingsScreenNavigationController")
+        nextViewController.modalPresentationStyle = .popover
+        let popover: UIPopoverPresentationController = nextViewController.popoverPresentationController!
+        popover.barButtonItem = SettingsBarButton
+        present(nextViewController, animated: true, completion:nil)
+    }
+    
+    @objc func reload(){
+        viewWillAppear(false)
+        UIView.transition(with: view, duration: 0.2, options: .transitionCrossDissolve, animations: {self.viewDidAppear(true)}, completion: nil)
+    }
+    
+    @IBAction func SendESC(_ sender: UIButton, forEvent event: UIEvent) {
+        ClickProcessor().BigButtonToServer(sender.currentTitle!, event.touches(for: sender)!.first!.phase as UITouch.Phase)
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
-        if self.restorationIdentifier == "mainScreen" {
-            //addChild(UIViewController)
-//            self.addChildViewController(RegularButtongsContainer)
-//            self.view.addSubview(vc.view)
-//            vc.didMoveToParentViewController(self)
-            
-            if UserDefaults.standard.string(forKey: "Layout") == "defaultKeys" {
-                print("Main screen is RegularButtongsContainer")
-                self.RegularButtongsContainer?.isHidden = false; self.VirtualFullsizeKB?.isHidden = true; self.CustomScreen?.isHidden = true
-            } else if UserDefaults.standard.string(forKey: "Layout") == "virtualKeyboard" {
-                print("Main screen is VirtualFullsizeKB")
-                self.RegularButtongsContainer?.isHidden = true; self.VirtualFullsizeKB?.isHidden = false; self.CustomScreen?.isHidden = true
-            } else if UserDefaults.standard.string(forKey: "Layout") == "touchPad" {
-                print("Main screen is VirtualFullsizeKB")
-                self.RegularButtongsContainer?.isHidden = true; self.VirtualFullsizeKB?.isHidden = true; self.CustomScreen?.isHidden = false
+        print("viewWillAppear called with", animated)
+        
+        switch UserDefaults.standard.string(forKey: "Layout") {
+        case "defaultKeys":
+            print("Main screen is defaultKeys")
+            RegularButtongsContainer?.isHidden = false; CustomScreen?.isHidden = true
+        case "touchPad":
+            print("Main screen is touchPad")
+            RegularButtongsContainer?.isHidden = true; CustomScreen?.isHidden = false
+            default:
+            print("Main screen is defaultKeys but it called from default statement")
+            RegularButtongsContainer?.isHidden = false; CustomScreen?.isHidden = true
+        }
+        
+        switch self.restorationIdentifier {
+        case "mainScreen":
+            SettingsButton.layer.cornerRadius = 12
+            ESCButton.layer.cornerRadius = 12
+            if UserDefaults.standard.bool(forKey: "FirstStart"){
+                print("This is the first launch! Hello new user!")
+                let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                let nextViewController = storyboard.instantiateViewController(withIdentifier: "firstStartScreen") as! MainScreen
+                present(nextViewController, animated: true, completion:nil)
+                UserDefaults.standard.set(false, forKey: "FirstStart")
             }
+        case "firstStartScreen":
+            FirstStartButton.layer.cornerRadius = 12
+        default:
+            print("What?")
         }
     }
     
+    @IBOutlet weak var FirstStartButton: UIButton!
+    @IBAction func FirstStartButtonAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
 }
