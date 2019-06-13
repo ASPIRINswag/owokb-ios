@@ -57,8 +57,8 @@
 /* Class = "UILabel"; text = "Enter your server IP"; ObjectID = "3uf-pg-xLF"; */
 "3uf-pg-xLF.text" = "Enter your server IP";
 
-/* Class = "UILabel"; text = "Server port"; ObjectID = "5gn-9Y-5hJ"; */
-"5gn-9Y-5hJ.text" = "Server port";
+/* Class = "UILabel"; text = "Server port"; ObjectID = "dzC-Jh-SC9"; */
+"dzC-Jh-SC9.text" = "Server port";
 
 /* Class = "UITableViewSection"; footerTitle = "Also make sure that your 727 port is free"; ObjectID = "Uih-Ih-8b6"; */
 "Uih-Ih-8b6.footerTitle" = "Also make sure that your 727 port is free";

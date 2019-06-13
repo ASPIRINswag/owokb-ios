@@ -54,14 +54,14 @@
 /* Class = "UILabel"; text = "Enter your server IP"; ObjectID = "3uf-pg-xLF"; */
 "3uf-pg-xLF.text" = "Введите IP сервера";
 
-/* Class = "UILabel"; text = "Server port"; ObjectID = "5gn-9Y-5hJ"; */
-"5gn-9Y-5hJ.text" = "Порт сервера";
+/* Class = "UILabel"; text = "Server port"; ObjectID = "dzC-Jh-SC9"; */
+"dzC-Jh-SC9.text" = "Порт сервера";
 
 /* Class = "UITableViewSection"; footerTitle = "Also make sure that your 727 port is free"; ObjectID = "Uih-Ih-8b6"; */
 "Uih-Ih-8b6.footerTitle" = "Так-же убедитесь что у вас свободен 727 порт";
 
 /* Class = "UITableViewSection"; headerTitle = "Appearance and usability"; ObjectID = "vEA-cG-GMf"; */
-"vEA-cG-GMf.headerTitle" = "Внешний вид у удобство";
+"vEA-cG-GMf.headerTitle" = "Внешний вид и удобство";
 
 /* Class = "UILabel"; text = "Layout"; ObjectID = "hJ8-Ga-JAm"; */
 "hJ8-Ga-JAm.text" = "Макеты";
@@ -110,7 +110,7 @@
 "3uJ-gD-x2d.text" = "Колличество кнопок";
 
 /* Class = "UITableViewSection"; headerTitle = "Buttons renaming"; ObjectID = "vBt-N4-Ij0"; */
-"vBt-N4-Ij0.headerTitle" = "Периименование кнопок";
+"vBt-N4-Ij0.headerTitle" = "Переименование кнопок";
 
 /* Class = "UILabel"; text = "Button 1"; ObjectID = "lIr-ce-taa"; */
 "lIr-ce-taa.text" = "Кнопка 1";
