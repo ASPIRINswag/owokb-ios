@@ -43,14 +43,17 @@ class SettingsLayout: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet weak var LayoutButtonsNum: UITextField!
     @IBAction func LayoutButtonsNumAction(_ sender: Any) {
-        let digits: String = LayoutButtonsNum.text!.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
-        if digits.isEmpty {
+        let digits: Int = (LayoutButtonsNum.text!.trimmingCharacters(in: NSCharacterSet.whitespaces).components(separatedBy: CharacterSet.decimalDigits.inverted).joined() as NSString).integerValue
+        if digits > 9 {
+            LayoutButtonsNum.text = "9"
+        } else if digits < 1 {
+            LayoutButtonsNum.text = "1"
+        }
+        else if (digits < 9 || digits > 1) {
+            LayoutButtonsNum.text = String(digits)
+        } else {
             LayoutButtonsNum.text = ""
             return
-        } else if Int(digits)! > 9 {
-            LayoutButtonsNum.text = "9"
-        } else if Int(digits)! < 1 {
-            LayoutButtonsNum.text = "1"
         }
         UserDefaults.standard.set(LayoutButtonsNum.text, forKey: "ButtonsCount")
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
